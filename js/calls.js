@@ -6,6 +6,7 @@ $(Document).ready(function(){
       type: "GET",
       url: $(this).attr("href"),
       success: function(databases) {
+        console.log(databases);
         $("tbody").empty();
         for (var i = 0; i < databases.length; i++) {
           $("tbody").append(buildTableRow(databases[i]));
@@ -14,15 +15,15 @@ $(Document).ready(function(){
     })
   });
 
-  function buildTableRow(databaseData) {
+  /*function buildTableRow(databaseData) {
     var db1Td = $("<td>").append(databaseData.name);
     var db2Td = $("<td>").append(databaseData.name);
     var db3Td = $("<td>").append(databaseData.name);
     var db4Td = $("<td>").append(databaseData.name);
 
     return $("<tr>").append(databaseData.name);
-      .append(userTd)
-      .append(photoTd)
-      .append(photoTd);
-  }
+      .append(imagesTd)
+      .append(imagesTd)
+      .append(imagesTd);
+  }*/
 });
