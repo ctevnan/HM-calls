@@ -1,4 +1,4 @@
-$(Document).ready(function(){
+$(document).ready(function(){
   $(".btn-default").on("click", "a", function(e){
     e.preventDefault();
     
