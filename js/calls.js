@@ -8,9 +8,21 @@ $(Document).ready(function(){
       success: function(databases) {
         $("tbody").empty();
         for (var i = 0; i < databases.length; i++) {
-          $("tbody").append(buildTableRow(databases[i]))
+          $("tbody").append(buildTableRow(databases[i]));
         }
       }
     })
-  }) 
-}
+  });
+
+  function buildTableRow(databaseData) {
+    var db1Td = $("<td>").append(databaseData.name);
+    var db2Td = $("<td>").append(databaseData.name);
+    var db3Td = $("<td>").append(databaseData.name);
+    var db4Td = $("<td>").append(databaseData.name);
+
+    return $("<tr>").append(databaseData.name);
+      .append(userTd)
+      .append(photoTd)
+      .append(photoTd);
+  }
+});
