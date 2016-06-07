@@ -15,7 +15,7 @@ $(document).ready(function(){
   });
 
   /*  function buildListGroup(images) {
-      var halberdApiUrl = "https://matchapi.halberdtechnologies.com/api/Database?userID=f6cd6592-f61e-40b2-afcc-c38827f075df";
+      var halberdApiUrl = "http://matchapi.halberdtechnologies.com/api/Database?userID=f6cd6592-f61e-40b2-afcc-c38827f075df";
 
       halberdApiUrl += photoData.owner.login + "/";
       halberdApiUrl += photoData.name + "/photos";
