@@ -18,7 +18,7 @@ $(document).ready(function(){
   $.ajax({
     type: "POST",
     dataType: "jsonp",
-    url: "http://matchapi.halberdtechnologies.com/api/Database?userID=2bb2b13d-1663-4198-88e2-a8cel63e8a28&database=cad87234-911b-4d90-ba0e-7e3ecb97ca62",
+    url: "http://matchapi.halberdtechnologies.com/api/Database?userID=&database=",
     success: function(images) {
       console.log(images);
     }
