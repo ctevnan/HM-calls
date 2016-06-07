@@ -1,5 +1,5 @@
 $(document).ready(function(){
-  $(".btn-default").on("click", "a", function(e){
+  $(".btn btn-default").on("click", "a", function(e){
     e.preventDefault();
     
     $.ajax({
@@ -15,7 +15,7 @@ $(document).ready(function(){
     })
   });
 
-  /*function buildTableRow(databaseData) {
+  function buildTableRow(databaseData) {
     var db1Td = $("<td>").append(databaseData.name);
     var db2Td = $("<td>").append(databaseData.name);
     var db3Td = $("<td>").append(databaseData.name);
@@ -25,5 +25,5 @@ $(document).ready(function(){
       .append(imagesTd)
       .append(imagesTd)
       .append(imagesTd);
-  }*/
+  }
 });

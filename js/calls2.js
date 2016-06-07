@@ -1,33 +1,32 @@
 $(document).ready(function(){
   $.ajax({
     type: "GET",
-    url: 'http://matchapi.halberdtechnologies.com/api/Database?userID=f6cd6592-f61e-40b2-afcc-c38827f075df',
+    url: "http://matchapi.halberdtechnologies.com/api/Database?userID=TestFolder",
     dataType: "jsonp",
     success: function(database) {
-     /* console.log(database);*/
-/*        for (var i = 0; i < database.length; i++) {
+      console.log(response);
+        for (var i = 0; i < database.length; i++) {
         var newListItem = buildListGroup(database[i]);
         $(".list-group").append(newListItem);
       }
     },
     error: function(jqXHR, textStatus, errorThrown) {
-      alert("error");*/
+      alert("error");
     }
   });
   
   $.ajax({
     type: "POST",
     dataType: "jsonp",
-    url: "http://matchapi.halberdtechnologies.com/api/Database?userID=&database=",
+    url: "http://matchapi.halberdtechnologies.com/api/Database?userID=TestFolder&database=TestFolder3",
     success: function(images) {
-      console.log(images);
+      console.log(images); 
     }
   })
-   /* function buildListGroup(images) {
-      var halberdApiUrl = "http://matchapi.halberdtechnologies.com/api/Database?userID=f6cd6592-f61e-40b2-afcc-c38827f075df";
-
-      halberdApiUrl += imageData.owner.login + "/";
-      halberdApiUrl += imageData.name + "/photos";
+    function buildListGroup(images) {
+      var halberdApiUrl = "http://matchapi.halberdtechnologies.com/api/Database?userID=TestFolder";
+      halberdApiUrl += TestFolder2.TestFolder + "/";
+      halberdApiUrl += images.name + "/images";
 
         var newLink = $("<a>")
           .attr("href", halberdApiUrl)
@@ -35,5 +34,4 @@ $(document).ready(function(){
           .append(imageData);
         return newLink;
       } 
-  }); */
 });
