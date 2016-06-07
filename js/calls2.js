@@ -4,8 +4,8 @@ $(document).ready(function(){
     url: 'http://matchapi.halberdtechnologies.com/api/Database?userID=f6cd6592-f61e-40b2-afcc-c38827f075df',
     dataType: "jsonp",
     success: function(database) {
-      console.log(database);
-     /* for (var i = 0; i < database.length; i++) {
+     /* console.log(database);*/
+/*        for (var i = 0; i < database.length; i++) {
         var newListItem = buildListGroup(database[i]);
         $(".list-group").append(newListItem);
       }
@@ -23,7 +23,7 @@ $(document).ready(function(){
       console.log(images);
     }
   })
-  /*  function buildListGroup(images) {
+   /* function buildListGroup(images) {
       var halberdApiUrl = "http://matchapi.halberdtechnologies.com/api/Database?userID=f6cd6592-f61e-40b2-afcc-c38827f075df";
 
       halberdApiUrl += imageData.owner.login + "/";
@@ -35,7 +35,5 @@ $(document).ready(function(){
           .append(imageData);
         return newLink;
       } 
-  }); 
- */
- // }
+  }); */
 });
