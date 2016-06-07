@@ -1,6 +1,7 @@
 $(document).ready(function(){
   $.ajax({
     type: "GET",
+    dataType: "jsonp",
     url: "http://matchapi.halberdtechnologies.com/api/Database?userID=f6cd6592-f61e-40b2-afcc-c38827f075df",
     success: function(databases) {
       console.log(databases);
