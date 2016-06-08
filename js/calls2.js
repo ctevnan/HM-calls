@@ -28,10 +28,10 @@ $(document).ready(function(){
       halberdApiUrl += TestFolder2.TestFolder + "/";
       halberdApiUrl += images.name + "/images";
 
-        var newLink = $("<a>")
-          .attr("href", halberdApiUrl)
-          .addClass("list-group-item")
-          .append(imageData);
-        return newLink;
-      } 
-});
+      var newLink = $("<a>")
+        .attr("href", halberdApiUrl)
+        .addClass("list-group-item")
+        .append(imageData);
+          return newLink;
+        }  
+      }) 
