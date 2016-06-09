@@ -4,7 +4,8 @@ $(document).ready(function(){
 
   $.ajax({
     type: "GET",
-    dataType: "jsonp",
+    dataType: "application/json",
+    Response: "Access-Control-Allow-Origin", true
     url: "http://matchapi.halberdtechnologies.com/api/Database?userID=TestFolder",
     success: function(response) {
       console.log(response);
@@ -23,12 +24,18 @@ $(document).ready(function(){
   //working
     $.ajax({
     type: "POST",
-    dataType: "jsonp",
+    dataType: "application/json",
+    Response: "Access-Control-Allow-Origin", true
     url: "http://matchapi.halberdtechnologies.com/api/Database?userID=TestFolder&database=TestFolder",
-    success: function(images) {
-      console.log("images"); 
-    }
+    success: function(response) {
+      console.log(response); 
+    },
+    error: function(jqXHR, textStatus, errorThrown) {
+      alert("error");
+        console.log(errorThrown);
+      }
   })
+    
    /* function buildListGroup(images) {
       var halberdApiUrl = "http://matchapi.halberdtechnologies.com/api/Database?userID=TestFolder";
       halberdApiUrl += TestFolder2.TestFolder + "/";

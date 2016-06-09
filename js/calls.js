@@ -5,13 +5,15 @@ $(document).ready(function() {
   $.ajax({
   type: "GET",
   url: "http://matchapi.halberdtechnologies.com/?userID=UUID.randomUUID().toString().trim()",
+  dataType: "application/json",
   Response: "Access-Control-Allow-Origin", true
-  /*success: function(jqXHR, textStatus, errorThrown) {
-  alert("success");
+  success: function(response) {
+    console.log(response);
   },
   error: function(jqXHR, textStatus, errorThrown) {
-  alert("error");
-  }*/  
+    alert("error");
+      console.log(errorThrown);
+    }  
   });
 });      
     
