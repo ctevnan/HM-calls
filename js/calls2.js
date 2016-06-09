@@ -15,7 +15,8 @@ $(document).ready(function(){
     },
     error: function(jqXHR, textStatus, errorThrown) {
       alert("error");
-    }
+        console.log(errorThrown);
+      }  
   });
 })
  

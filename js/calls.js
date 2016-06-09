@@ -1,15 +1,20 @@
 $(document).ready(function() {
-  $(".list-group").on("click", "a", function(e) {
-    e.preventDefault();
+ /* $(".list-group").on("click", "a", function(e) {
+    e.preventDefault();*/
 
-    $.ajax({
-      type: "POST",
-      dataType: "jsonb",
-      url: "http://matchapi.halberdtechnologies.com/api/FileUpload?userID=TestFolder&currentDB=",
-      success: function(response) {
-        console.log(response);
-      }
-    });
+  $.ajax({
+  type: "GET",
+  url: "http://matchapi.halberdtechnologies.com/?userID=UUID.randomUUID().toString().trim()",
+  Response: "Access-Control-Allow-Origin", true
+  /*success: function(jqXHR, textStatus, errorThrown) {
+  alert("success");
+  },
+  error: function(jqXHR, textStatus, errorThrown) {
+  alert("error");
+  }*/  
+  });
+});      
+    
     
    /* $.ajax({
       type: "GET",
@@ -21,11 +26,7 @@ $(document).ready(function() {
          /* $("tbody").empty();
           for (var i = 0; i < images.length; i++) {
             $("tbody").append(buildTableRow(images[i]));
-          }*/
-      /*  }
-      })*/
-   /* });      
-  });*/
+          }*  
 
  /* function buildTableRow(data) {
     var db1Td = $("<td>").append(databaseData.name);
