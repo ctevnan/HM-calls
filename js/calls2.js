@@ -25,9 +25,10 @@ $(document).ready(function(){
   //working
     $.ajax({
     type: "POST",
-    dataType: "application/json",
+    /*dataType: "application/json",*/
    /* Response: "Access-Control-Allow-Origin", true*/
-    url: "http://matchapi.halberdtechnologies.com/api/Database?userID=TestFolder&database=TestFolder",
+    url: "http://matchapi.halberdtechnologies.com/api/Database?userID=TestFolder2&database=TestFolder2",
+    dataType: "jsonp",
     success: function(response) {
       console.log(response); 
     },
