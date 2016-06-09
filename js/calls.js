@@ -1,12 +1,12 @@
 $(document).ready(function() {
  /* $(".list-group").on("click", "a", function(e) {
     e.preventDefault();*/
-
+  
   $.ajax({
-  type: "GET",
-  url: "http://matchapi.halberdtechnologies.com/?userID=UUID.randomUUID().toString().trim()",
-  dataType: "application/json",
-  Response: "Access-Control-Allow-Origin", true
+  type:"GET",
+  url:"http://matchapi.halberdtechnologies.com/?userID=UUID.randomUUID().toString().trim()",
+  dataType:"application/json",
+ /* response: "Access-Control-Allow-Origin", true*/
   success: function(response) {
     console.log(response);
   },

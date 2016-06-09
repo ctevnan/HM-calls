@@ -4,28 +4,29 @@ $(document).ready(function(){
 
   $.ajax({
     type: "GET",
-    dataType: "application/json",
-    Response: "Access-Control-Allow-Origin", true
     url: "http://matchapi.halberdtechnologies.com/api/Database?userID=TestFolder",
+   /* response: "Access-Control-Allow-Origin", true
+    dataType: "application/json; charset=utf-8",*/
+    dataType: "jsonp",
     success: function(response) {
       console.log(response);
-        for (var i = 0; i < database.length; i++) {
+        /*for (var i = 0; i < database.length; i++) {
         var newListItem = buildListGroup(database[i]);
-        $(".list-group").append(new ListItem);
+        $(".list-group").append(new ListItem);*/
       }
-    },
-    error: function(jqXHR, textStatus, errorThrown) {
+    }),
+    /*error: function(jqXHR, textStatus, errorThrown) {
       alert("error");
         console.log(errorThrown);
-      }  
-  });
-})
+      })
+    })    */
+
  
   //working
     $.ajax({
     type: "POST",
     dataType: "application/json",
-    Response: "Access-Control-Allow-Origin", true
+   /* Response: "Access-Control-Allow-Origin", true*/
     url: "http://matchapi.halberdtechnologies.com/api/Database?userID=TestFolder&database=TestFolder",
     success: function(response) {
       console.log(response); 
@@ -34,7 +35,8 @@ $(document).ready(function(){
       alert("error");
         console.log(errorThrown);
       }
-  })
+  });
+});    
     
    /* function buildListGroup(images) {
       var halberdApiUrl = "http://matchapi.halberdtechnologies.com/api/Database?userID=TestFolder";
