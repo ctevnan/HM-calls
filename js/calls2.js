@@ -1,29 +1,34 @@
 $(document).ready(function(){
+  /*$(".list-group").on("click", "a", function(e) {
+    e.preventDefault(); */
+
   $.ajax({
     type: "GET",
-    url: "http://matchapi.halberdtechnologies.com/api/Database?userID=TestFolder",
     dataType: "jsonp",
-    success: function(database) {
+    url: "http://matchapi.halberdtechnologies.com/api/Database?userID=TestFolder",
+    success: function(response) {
       console.log(response);
         for (var i = 0; i < database.length; i++) {
         var newListItem = buildListGroup(database[i]);
-        $(".list-group").append(newListItem);
+        $(".list-group").append(new ListItem);
       }
     },
     error: function(jqXHR, textStatus, errorThrown) {
       alert("error");
     }
   });
-  
-  $.ajax({
+})
+ 
+  //working
+    $.ajax({
     type: "POST",
     dataType: "jsonp",
-    url: "http://matchapi.halberdtechnologies.com/api/Database?userID=TestFolder&database=TestFolder3",
+    url: "http://matchapi.halberdtechnologies.com/api/Database?userID=TestFolder&database=TestFolder",
     success: function(images) {
-      console.log(images); 
+      console.log("images"); 
     }
   })
-    function buildListGroup(images) {
+   /* function buildListGroup(images) {
       var halberdApiUrl = "http://matchapi.halberdtechnologies.com/api/Database?userID=TestFolder";
       halberdApiUrl += TestFolder2.TestFolder + "/";
       halberdApiUrl += images.name + "/images";
@@ -34,4 +39,4 @@ $(document).ready(function(){
         .append(imageData);
           return newLink;
         }  
-      }) 
+      }) */
