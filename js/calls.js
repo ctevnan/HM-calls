@@ -1,16 +1,15 @@
-/*$(document).ready(function() {
+$(document).ready(function() {
   $(".list-group").on("click", "a", function(e) {
     e.preventDefault();
 
     $.ajax({
-      type: "GET",
-      contentLength: "188",
-      dataType: "application/json",
-      url: "http://matchapi.halberdtechnologies.com/api/Database?userID=TestFolder",
+      type: "POST",
+      dataType: "jsonb",
+      url: "http://matchapi.halberdtechnologies.com/api/FileUpload?userID=TestFolder&currentDB=",
       success: function(response) {
         console.log(response);
       }
-    });*/
+    });
     
    /* $.ajax({
       type: "GET",
