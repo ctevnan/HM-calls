@@ -18,7 +18,7 @@
         <div class="list-group"></div>
       </div>
       <div class="col-md-7">
-        <table class="table">
+        <table class="table" id="table1">
           <thead>
             <th>userID</th>
             <th>currentDatabase</th>
@@ -40,13 +40,11 @@
   <div class="row">
     <div class="col-md-3">
       <p>Header information, including length, server type, content type, last modified.</p>
-        <!-- <button type="button" onclick="loaddoc()">Get Header</button> -->
-        <button onclick="myFunction()">Get Info</button>
+        <button type="button" onclick="loaddoc()">Get Header</button>
         <br/>
       <p id="header"></p>
-      <table id="table1"></table>
     </div>
-  </div>     
+  </div>       
   <nav class="navbar navbar-inverse navbar-fixed-bottom">
     <div class="container">
     ...
@@ -57,6 +55,5 @@
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
   <script type="text/javascript" src="js/calls.js"></script>
   <script type="text/javascript" src="js/calls2.js"></script>
-  <script type="text/javascript" src="js/table.js"></script>
 </body>
 </html>
