@@ -1,5 +1,6 @@
 $(document).ready(function(){
   var i;
+  var xml;
   var myFunction;
   var xmlDoc = xml.responseXML;
   var table="<tr><th>userID</th><th>currentDatabase</th><th>image</th></tr>";
@@ -12,7 +13,7 @@ $(document).ready(function(){
       x[i].getElementsByTagName("CURRENTDATABASE")[0].childNodes[0].nodeValue +
       "</td><td>" +
       x[i].getElementsByTagName("IMAGE")[0].childNodes[0].nodeValue +
-      "</td><tR>";
+      "</td><tr>";
     }
     document.getElementById("table1").innerHTML = table;
   }
