@@ -2,11 +2,10 @@ $(document).ready(function(){
   /*$(".list-group").on("click", "a", function(e) {
     e.preventDefault(); */
   $.ajax({
-    url: "http://matchapi.halberdtechnologies.com/api/Database?userID=TestFoldercallback=?",
+    url: "http://matchapi.halberdtechnologies.com/api/Database?userID=TestFolder",
     jsonp: "callback",
     dataType: "jsonp",
     data: {
-      q: "select name, userID, and images where query=\"TestFolder2\"",
       format: "json"
     },
     onSuccess: function(response) {

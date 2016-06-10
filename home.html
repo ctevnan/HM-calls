@@ -3,6 +3,7 @@
 <head>
   <title>HM Api Calls</title>
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+  <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
   <nav class="navbar navbar-inverse">
@@ -19,7 +20,6 @@
       <div class="col-md-7">
         <table class="table">
           <thead>
-            <th>name</th>
             <th>userID</th>
             <th>currentDatabase</th>
             <th>images</th>
@@ -40,20 +40,10 @@
   <div class="row">
     <div class="col-md-3">
       <p>Header information, including length, server type, content type, last modified.</p>
-      <button onclick="loadDoc()">Get Header</button>
+        <button type="button" onclick="loadDoc()">Get Header</button>
+        <br/>
       <p id="header"></p>
-      <script>
-        function loadDoc() {
-          var request =  new HttpRequest();
-          http.onreadystatechange = function() {
-          if (http.readyState == 4 && http.status == 200) {
-            document.getElementById("header").innerHTML = http.getAllResponseHeaders();
-          }
-        }
-        http.open("GET", "ajax_info.txt", true);
-        http.send();
-      }
-    </script>
+      <table id="table1"></table>
     </div>
   </div>     
   <nav class="navbar navbar-inverse navbar-fixed-bottom">
@@ -66,5 +56,6 @@
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
   <script type="text/javascript" src="js/calls.js"></script>
   <script type="text/javascript" src="js/calls2.js"></script>
+  <script type="text/javascript" src="js/home.js"></script>
 </body>
 </html>
