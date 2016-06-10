@@ -9,10 +9,14 @@ $(document).ready(function(){
       q: "select name, userID, and images where query=\"TestFolder2\"",
       format: "json"
     },
-    success: function(response) {
+    onSuccess: function(response) {
       console.log(response);
-    }
-  });
+    },
+    /*onSuccess: function(response) {
+      var resp = JSON.parse(response);
+    }*/
+  })
+});  
   /*$.ajax({
     type: "GET",
     url: "http://matchapi.halberdtechnologies.com/api/Database?userID=TestFolder",*/
