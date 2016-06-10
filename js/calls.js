@@ -1,13 +1,13 @@
-$(document).ready(function() {
+/*$(document).ready(function() {
  /* $(".list-group").on("click", "a", function(e) {
     e.preventDefault();*/
   
-  $.ajax({
-  type:"GET",
+  /*$.ajax({
+  type:"POST",
   url:"http://matchapi.halberdtechnologies.com/?userID=UUID.randomUUID().toString().trim()",
   dataType:"application/json",
  /* response: "Access-Control-Allow-Origin", true*/
-  success: function(response) {
+  /*success: function(response) {
     console.log(response);
   },
   error: function(jqXHR, textStatus, errorThrown) {
@@ -15,7 +15,7 @@ $(document).ready(function() {
       console.log(errorThrown);
     }  
   });
-});      
+});*/      
     
     
    /* $.ajax({

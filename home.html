@@ -39,7 +39,21 @@
   </div>
   <div class="row">
     <div class="col-md-3">
-      <div class="btn btn-default" role="button" aria-label="submit">Button</div>
+      <p>Header information, including length, server type, content type, last modified.</p>
+      <button onclick="loadDoc()">Get Header</button>
+      <p id="header"></p>
+      <script>
+        function loadDoc() {
+          var request =  new HttpRequest();
+          http.onreadystatechange = function() {
+          if (http.readyState == 4 && http.status == 200) {
+            document.getElementById("header").innerHTML = http.getAllResponseHeaders();
+          }
+        }
+        http.open("GET", "ajax_info.txt", true);
+        http.send();
+      }
+    </script>
     </div>
   </div>     
   <nav class="navbar navbar-inverse navbar-fixed-bottom">
