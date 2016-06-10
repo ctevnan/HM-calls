@@ -5,8 +5,7 @@ $(document).ready(function(){
   $.ajax({
     type: "GET",
     url: "http://matchapi.halberdtechnologies.com/api/Database?userID=TestFolder",
-   /* response: "Access-Control-Allow-Origin", true
-    dataType: "application/json; charset=utf-8",*/
+   /* response: "Access-Control-Allow-Origin", true*/
     dataType: "jsonp",
     success: function(response) {
       console.log(response);
@@ -25,9 +24,8 @@ $(document).ready(function(){
   //working
     $.ajax({
     type: "POST",
-    /*dataType: "application/json",*/
    /* Response: "Access-Control-Allow-Origin", true*/
-    url: "http://matchapi.halberdtechnologies.com/api/Database?userID=TestFolder2&database=TestFolder2",
+    url: "http://matchapi.halberdtechnologies.com/api/Database?userID=TestFolder2&database=TestFolder2&jsonp=?",
     dataType: "jsonp",
     success: function(response) {
       console.log(response); 
