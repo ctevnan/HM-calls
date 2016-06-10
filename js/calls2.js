@@ -1,19 +1,30 @@
 $(document).ready(function(){
   /*$(".list-group").on("click", "a", function(e) {
     e.preventDefault(); */
-
   $.ajax({
-    type: "GET",
     url: "http://matchapi.halberdtechnologies.com/api/Database?userID=TestFolder",
-   /* response: "Access-Control-Allow-Origin", true*/
+    jsonp: "callback",
     dataType: "jsonp",
+    data: {
+      q: "select name, userID, and images where query=\"TestFolder2\"",
+      format: "json"
+    },
     success: function(response) {
       console.log(response);
-        /*for (var i = 0; i < database.length; i++) {
+    }
+  });
+  /*$.ajax({
+    type: "GET",
+    url: "http://matchapi.halberdtechnologies.com/api/Database?userID=TestFolder",*/
+   /* response: "Access-Control-Allow-Origin", true*/
+    /*dataType: "jsonp",
+    success: function(response) {
+      console.log(response);
+        for (var i = 0; i < database.length; i++) {
         var newListItem = buildListGroup(database[i]);
-        $(".list-group").append(new ListItem);*/
+        $(".list-group").append(new ListItem);
       }
-    }),
+    }),*/
     /*error: function(jqXHR, textStatus, errorThrown) {
       alert("error");
         console.log(errorThrown);
@@ -22,10 +33,10 @@ $(document).ready(function(){
 
  
   //working
-    $.ajax({
-    type: "POST",
+    /*$.ajax({
+    type: "POST",*/
    /* Response: "Access-Control-Allow-Origin", true*/
-    url: "http://matchapi.halberdtechnologies.com/api/Database?userID=TestFolder2&database=TestFolder2&jsonp=?",
+    /*url: "http://matchapi.halberdtechnologies.com/api/Database?userID=TestFolder2&database=TestFolder2&jsonp=?",
     dataType: "jsonp",
     success: function(response) {
       console.log(response); 
@@ -35,7 +46,7 @@ $(document).ready(function(){
         console.log(errorThrown);
       }
   });
-});    
+});    */
     
    /* function buildListGroup(images) {
       var halberdApiUrl = "http://matchapi.halberdtechnologies.com/api/Database?userID=TestFolder";
