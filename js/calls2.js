@@ -20,22 +20,22 @@ $(document).ready(function(){
     type: "GET",
     url: "http://matchapi.halberdtechnologies.com/api/Database?userID=TestFolder",
     /*response: "Access-Control-Allow-Origin", true*/
-    /*dataType: "jsonp",*/
+    dataType: "jsonp",
     success: function(response) {
       console.log(response);
       }
     })
-    error: function (jqXHR, textStatus, errorThrown) {
+   /* error: function (jqXHR, textStatus, errorThrown) {
       alert("errorThrown");
         console.log(errorThrown);
       })
-    })    
+    }) */   
 
     $.ajax({
     type: "POST",
    /* Response: "Access-Control-Allow-Origin", true*/
     url: "http://matchapi.halberdtechnologies.com/api/Database?userID=TestFolder2&database=TestFolder2&jsonp=?",
-    /*dataType: "jsonp",*/
+    dataType: "jsonp",
     success: function(response) {
       console.log(response); 
     },
