@@ -2,7 +2,7 @@ $(document).ready(function(){
   /*$(".list-group").on("click", "a", function(e) {
     e.preventDefault(); */
   $.ajax({
-    url: "http://matchapi.halberdtechnologies.com/api/Database?userID=TestFolder",
+    url: "http://matchapi.halberdtechnologies.com/api/Database?userID=TestFoldercallback=?",
     jsonp: "callback",
     dataType: "jsonp",
     data: {
