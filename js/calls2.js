@@ -4,8 +4,8 @@ $(document).ready(function(){
     type: "GET",
     url: "http://matchapi.halberdtechnologies.com/api/Database?userID=TestFolder",
     dataType: "jsonp",
-    success: function(response) {
-      console.log(response);
+    success: function(data) {
+      console.log(data);
       }
     }) 
 
@@ -13,12 +13,12 @@ $(document).ready(function(){
     type: "POST",
     url: "http://matchapi.halberdtechnologies.com/api/Database?userID=TestFolder&database=TestFolder",
     dataType: "jsonp",
-    success: function(response) {
-      console.log(response); 
+    success: function(data) {
+      console.log(data); 
     },
     error: function(jqXHR, textStatus, errorThrown) {
       alert("errorThrown");
         console.log(errorThrown);
       }
   });
-});   
+});      
