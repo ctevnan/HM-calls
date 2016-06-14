@@ -1,18 +1,25 @@
 $(document).ready(function() {
-  var tableSet = $('#table1').DataTable();
-  var counter = 1;
+  $.ajax({
+    type: "GET",
+    url: "http://matchapi.halberdtechnologies.com/api/Database?userID=TestFolder",
+    dataType: 'jsonp',
+    success: function(responseString) {
+      alert(responseString);
+    },
+    error: function(xhr, errorType, exception) {
+      var errorMessage = exception || xhr.statusText;
+      alert(errorMessage);
+    }
+  });
+});     
 
-  $("#addRow").on('click', function() {
-    t.row.add([
-      counter + '.1',
-      counter + '.2',
-      counter + '.3',
-      counter + '.4'
-    ]).draw( false );
+/*      $.each(data, function(key, value) {
 
-    counter++;
-  } );
-
-  //auto add first row of data
-  $('#addRow').click();
-} );
+        $("#mytable").append($('<tr>')
+          .append($('<td>')
+          .append(value.name))
+          .append($('<td>')
+        })  
+      })*/
+ /*   }
+  })*/
