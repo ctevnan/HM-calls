@@ -5,10 +5,10 @@ $(document).ready(function() {
     $.ajax({
       type: "GET",
       url: $(this).attr("href"),
-      success: function(ImageName) {
+      success: function(userID) {
         $("tbody").empty();
-        for (var i = 0; i < ImageName.length; i++) {
-          $("tbody").append(buildTableRow(images[i]));
+        for (var i = 0; i < userID.length; i++) {
+          $("tbody").append(buildTableRow(userID[i]));
         }
       }
     })
