@@ -1,0 +1,23 @@
+{
+  "name": "apicalls",
+  "version": "1.0.0",
+  "description": "testing api calls",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ctevnan/HM-calls.git"
+  },
+  "author": "CTevnan",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ctevnan/HM-calls/issues"
+  },
+  "homepage": "https://github.com/ctevnan/HM-calls#readme",
+  "dependencies": {
+    "express": "^4.13.4",
+    "morgan": "^1.7.0"
+  }
+}

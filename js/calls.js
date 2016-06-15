@@ -4,18 +4,14 @@ $(document).ready(function() {
     
     $.ajax({
       type: "GET",
-      url: "http://matchapi.halberdtechnologies.com/api/Database?userID=TestFolder",
-      dataType: "jsonp",
-      success: function(data, textStatus, jqXHR) {
-        console.log(data);
-        console.log(textStatus);
-        console.log(jqXHR);
-         /* $("tbody").empty();
-          for (var i = 0; i < images.length; i++) {
-            $("tbody").append(buildTableRow(images[i]));
-            }*/
+      url: $(this).attr("href"),
+      success: function(ImageName) {
+        $("tbody").empty();
+        for (var i = 0; i < ImageName.length; i++) {
+          $("tbody").append(buildTableRow(images[i]));
+        }
       }
-    });
+    })
   });
 });  
              
