@@ -8,6 +8,7 @@ $(document).ready(function(){
       console.log(data);
       }
     }) 
+  });
 
     /*$.ajax({
     type: "POST",
@@ -20,5 +21,4 @@ $(document).ready(function(){
       alert("errorThrown");
         console.log(errorThrown);
       }*/
-  });
-});       
+      
