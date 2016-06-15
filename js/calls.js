@@ -1,34 +1,25 @@
-/*$(document).ready(function() {
- /* $(".list-group").on("click", "a", function(e) {
-    e.preventDefault();*/
-  
-  /*$.ajax({
-  type:"POST",
-  url:"http://matchapi.halberdtechnologies.com/?userID=UUID.randomUUID().toString().trim()",
-  dataType:"application/json",
- /* response: "Access-Control-Allow-Origin", true*/
-  /*success: function(response) {
-    console.log(response);
-  },
-  error: function(jqXHR, textStatus, errorThrown) {
-    alert("error");
-      console.log(errorThrown);
-    }  
-  });
-});*/      
+$(document).ready(function() {
+  $(".list-group").on("click", "a", function(e) {
+    e.preventDefault();      
     
-    
-   /* $.ajax({
+    $.ajax({
       type: "GET",
-      /*url: $(this).attr("href"),*/
-      /*url: "http://matchapi.halberdtechnologies.com/api/Database?userID=TestFolder",
+      url: "http://matchapi.halberdtechnologies.com/api/Database?userID=TestFolder",
       dataType: "jsonp",
-      success: function(response) {
-        console.log(response);*/
+      success: function(data, textStatus, jqXHR) {
+        console.log(data);
+        console.log(textStatus);
+        console.log(jqXHR);
          /* $("tbody").empty();
           for (var i = 0; i < images.length; i++) {
             $("tbody").append(buildTableRow(images[i]));
-          }*  
+            }*/
+      }
+    });
+  });
+});  
+             
+
 
  /* function buildTableRow(data) {
     var db1Td = $("<td>").append(databaseData.name);
