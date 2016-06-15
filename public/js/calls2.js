@@ -9,7 +9,7 @@ $(document).ready(function(){
       }
     }) 
 
-    $.ajax({
+    /*$.ajax({
     type: "POST",
     url: "http://matchapi.halberdtechnologies.com/api/Database?userID=TestFolder&database=TestFolder",
     dataType: "jsonp",
@@ -19,6 +19,6 @@ $(document).ready(function(){
     error: function(jqXHR, textStatus, errorThrown) {
       alert("errorThrown");
         console.log(errorThrown);
-      }
+      }*/
   });
 });       
