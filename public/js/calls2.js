@@ -1,6 +1,16 @@
 $(document).ready(function(){
+  
+  var invocation = new XMLHttpRequest();
+  var url = 'http://matchapi.halberdtechnologies.com/api/Database?userID=TestFolder';
 
-  $.ajax({
+  function callOtherDomain() {
+    if(invocation) {
+      invocation.open('GET', url, true);
+      invocation.onreadystatechange = handler;
+      invocation.send();
+    }
+  }
+  /*$.ajax({
     type: "GET",
     url: "http://matchapi.halberdtechnologies.com/api/Database?userID=TestFolder",
     success: function(response) {
@@ -10,7 +20,7 @@ $(document).ready(function(){
   function successCallback(responseObj){
     //read response, show data
     alert(JSON.stringify(responseObj)); //only applicable to JSON response
-  }
+  }*/
   
 
   $.ajax({
