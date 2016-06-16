@@ -2,6 +2,7 @@ var express = require('express');
 var morgan = require('morgan');
 var app = express();
 var PORT = process.env.PORT || 3000;
+var server = require('node-http-server');
 
 app.use("/js", express.static("public/js"));
 

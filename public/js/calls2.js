@@ -24,11 +24,8 @@ $(document).ready(function(){
       alert("errorThrown");
         console.log(errorThrown);
       }
-    }
+    })
     function successCallback(responseObj){
       alert(JSON.stringify(responseObj));
     }
-  })
-});    
-      
-      
+  })      
