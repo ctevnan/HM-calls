@@ -2,7 +2,6 @@ $(document).ready(function(){
 
   $.ajax({
     type: "GET",
-    access control allow origin: *,
     url: "http://matchapi.halberdtechnologies.com/api/Database?userID=TestFolder",
     success: function(response) {
       console.log(response);
@@ -16,7 +15,6 @@ $(document).ready(function(){
 
   $.ajax({
     type: "POST",
-    access control allow origin: *,
     url: "http://matchapi.halberdtechnologies.com/api/Database?userID=TestFolder&database=TestFolder",
     success: function(response) {
       console.log(response); 
