@@ -1,11 +1,11 @@
 $(document).ready(function(){
-  
+
   var invocation = new XMLHttpRequest();
-  var url = 'http://matchapi.halberdtechnologies.com/api/Database?userID=TestFolder';
+  var url = "http://matchapi.halberdtechnologies.com/api/Database?userID=TestFolder";
 
   function callOtherDomain() {
     if(invocation) {
-      invocation.open('GET', url, true);
+      invocation.open("GET", url, true);
       invocation.onreadystatechange = handler;
       invocation.send();
     }
@@ -16,22 +16,17 @@ $(document).ready(function(){
     success: function(response) {
       console.log(response);
     } 
-  });
-  function successCallback(responseObj){
-    //read response, show data
-    alert(JSON.stringify(responseObj)); //only applicable to JSON response
-  }*/
-  
+  });*/
 
   $.ajax({
     type: "POST",
     url: "http://matchapi.halberdtechnologies.com/api/Database?userID=TestFolder&database=TestFolder",
     success: function(response) {
-      console.log(response); 
+    console.log(response); 
     },
     error: function(jqXHR, textStatus, errorThrown) {
       alert("errorThrown");
-        console.log(errorThrown);
+      console.log(errorThrown);
       }
     })
     function successCallback(responseObj){
