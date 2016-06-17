@@ -18,7 +18,18 @@ $(document).ready(function(){
     } 
   });*/
 
-  $.ajax({
+  var invocation = new XMLHttpRequest();
+  var url = "http://matchapi.halberdtechnologies.com/api/Database?userID=TestFolder&database=TestFolder";
+
+  function callOtherDomain() {
+    if(invocation) {
+      invocation.open("POST", url, true);
+      invocation.onreadystatechange = handler;
+      invocation.send();
+    }
+  }
+
+  /*$.ajax({
     type: "POST",
     url: "http://matchapi.halberdtechnologies.com/api/Database?userID=TestFolder&database=TestFolder",
     success: function(response) {
@@ -32,4 +43,4 @@ $(document).ready(function(){
     function successCallback(responseObj){
       alert(JSON.stringify(responseObj));
     }
-  })      
+  })      */
