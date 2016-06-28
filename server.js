@@ -1,6 +1,6 @@
 var express = require('express');
-var morgan = require('morgan');
 var app = express();
+var morgan = require('morgan');
 var http = require('http');
 var PORT = process.env.PORT || 3000;
 var server = require('node-http-server');
@@ -13,15 +13,11 @@ app.use(function(req, res, next) {
 
 app.use("/js", express.static("public/js"));
 
-app.get("/", function(req,res) {
+app.get("/", function(req, res) {
   res.sendFile(process.cwd() + "/views/home.html");
 });
 
-app.get("/", function(req,res) {
-  res.sendFile(process.cwd() + "/css/style.css");
-})
-
-app.get('/userIDs/:folderName', function(req, res) {
+app.get("/userID/:folderName", function(req, res) {
   matchapi.halberdtechnologies.search(req.params.folderName, function(err, folders) {
     console.log(folders);
     var firstFolder = folders[0];
