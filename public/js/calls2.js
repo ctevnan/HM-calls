@@ -10,24 +10,15 @@ $(document).ready(function(){
       invocation.send();
     }
   }
-  /*$.ajax({
+  $.ajax({
     type: "GET",
     url: "http://matchapi.halberdtechnologies.com/api/Database?userID=TestFolder",
-    success: function(response) {
-      console.log(response);
+    success: function(data, textStatus, jqXHR) {
+      alert("data");
     } 
-  });*/
+  });
 
-  var invocation = new XMLHttpRequest();
-  var url = "http://matchapi.halberdtechnologies.com/api/Database?userID=TestFolder&database=TestFolder";
-
-  function callOtherDomain() {
-    if(invocation) {
-      invocation.open("POST", url, true);
-      invocation.onreadystatechange = handler;
-      invocation.send();
-    }
-  }
+  $("#tbody").load("userID");
 });
   /*$.ajax({
     type: "POST",
