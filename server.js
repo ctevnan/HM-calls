@@ -17,6 +17,10 @@ app.get("/", function(req,res) {
   res.sendFile(process.cwd() + "/views/home.html");
 });
 
+app.get("/", function(req,res) {
+  res.sendFile(process.cwd() + "/css/style.css");
+})
+
 app.get('/userIDs/:folderName', function(req, res) {
   matchapi.halberdtechnologies.search(req.params.folderName, function(err, folders) {
     console.log(folders);
