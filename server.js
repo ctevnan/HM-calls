@@ -1,6 +1,7 @@
 var express = require('express');
 var morgan = require('morgan');
 var app = express();
+var http = require('http');
 var PORT = process.env.PORT || 3000;
 var server = require('node-http-server');
 
