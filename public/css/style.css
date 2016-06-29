@@ -1,11 +1,10 @@
 .page-header {
   position:relative;
-  font-family: 'Oxygen';
-  background-image: url("http://halberdmatch.com/wp-content/uploads/2015/02/halbert-slide-eye-scan.png") center center;
+  font-family: 'Oxygen', sans-serif;
+  background-image: url("../images/halberd-eye.png");
   background-color: #cccccc;
-  background-repeat: no-repeat;
-  background-size: 100% 100%;
+  background-size: 100%;
   height: 300px;
   width: 100%;
   text-align: center;
-},
+}

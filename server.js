@@ -16,6 +16,8 @@ app.use(function(req, res, next) {
 
 app.use(express.static('public'));
 
+app.use(express.static('images'));
+
 app.use("/js", express.static("public/js"));
 
 //to get /style.css
