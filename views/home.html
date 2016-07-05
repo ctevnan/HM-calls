@@ -3,64 +3,71 @@
 <html lang="en">
   <head>
     <title>HM Api Calls</title>
-      <meta name="viewport" content="width=device-width, initial-scale=1, maxim-scale=1, user-scalable=no">
+      <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
       <link rel="stylesheet" type="text/css" href='https://fonts.googleapis.com/css?family=Oxygen'>
       <link rel="stylesheet" type="text/css" href="css/style.css">
       <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
   </head>
   <body>
     <nav class="navbar navbar-inverse"></nav>
-    <div class="container">
-      <div class="page-header">
-        <h1>Halberd Match <small>Databases, Images</small></h1>
-      </div>
-    </div>  
-    <div class="row">
-      <div class="col-lg-6">
-        <div class="input-group">
-          <div class="input-group-btn">
-            <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Action <span class="caret"></span></button>
-              <ul class="dropdown-menu">
-                <li><a href="#">GET</a></li>
-                <li><a href="#">POST</a></li>
-              </ul>
-            </div><!-- /btn-group -->
-          <input type="text" class="form-control" aria-label="...">
-        </div><!-- /input-group -->
-      </div><!-- /.col-lg-6 -->
-    </div>
-    <div class="panel panel-default">
-      <div class="panel-body">
-        <div class="input-group">
-          <span class="input-group-addon" id="sizing-addon2">UUID</span>
-            <input type="text" class="form-control" placeholder="UUID" aria-describedby="sizing-addon2">
-        </div>
-      </div>
-      <div class="panel-footer">Enter UUID</div>
-    </div>
-    <div class="panel panel-default">
-      <div class="panel-body"> 
-        <div class="input-group">
-          <span class="input-group-addon" id="sizing-addon2">Database</span>
-            <input type="text" class="form-control" placeholder="Database" aria-describedby="sizing-addon2">
-        </div>  
-      </div>
-      <div class="panel-footer">Enter Database</div>
-    </div>
-    <div class="panel panel-default">
-      <div class="panel-heading">Results</div>
-        <table class="table">
-          <thead>
-            <th>Databases</th>
-            <th>Files</th>
-          </thead>
-          <tbody></tbody>  
-        </table>
-    </div>
-    <nav class="navbar navbar-inverse navbar-fixed-bottom">
       <div class="container">
+        <div class="page-header">
+          <h1>Halberd Match <small>Databases, Images</small></h1>
+        </div>
+      </div>    
+      <div class="row">
+        <div class="col-md-6">
+          <div class="input-group">
+            <div class="input-group-btn">
+              <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Action <span class="caret"></span></button>
+                <ul class="dropdown-menu">
+                  <li><a href="#">GET</a></li>
+                  <li><a href="#">POST</a></li>
+                </ul>
+              </div><!-- /btn-group -->
+            <input type="text" class="form-control" aria-label="...">
+          </div><!-- /input-group -->
+        </div><!-- /.col-lg-6 -->
       </div>
-    </nav>  
+      <br/>
+      <br/>
+      <br/>
+      <div class="row">
+        <div class="col-md-6">
+          <div class="panel panel-default">
+            <div class="panel-body">
+              <div class="input-group">
+                <span class="input-group-addon" id="sizing-addon2">UUID</span>
+                  <input type="text" class="form-control" placeholder="UUID" aria-describedby="sizing-addon2">
+              </div>
+            </div>
+          </div>
+        </div>  
+        <div-class="col-md-6">
+          <div class="panel panel-default">
+            <div class="panel-body"> 
+              <div class="input-group">
+                <span class="input-group-addon" id="sizing-addon2">Database</span>
+                  <input type="text" class="form-control" placeholder="Database" aria-describedby="sizing-addon2">
+              </div>    
+            </div>    
+          </div> 
+      </div>      
+      <div class="row">
+        <div class="col-md-12">
+          <div class="panel panel-default">
+            <div class="panel-heading">Results</div>
+              <table class="table table-bordered">
+                <thead>
+                  <th>Databases</th>
+                  <th>Files</th>
+                </thead>
+                <tbody></tbody>  
+              </table>
+          </div>
+        </div>
+      </div>      
+      <nav class="navbar navbar-inverse navbar-fixed-bottom"></nav>  
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
     <script src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>

@@ -10,4 +10,7 @@
   text-align: center;
   font-size: 20px;
   color: #e6ffff;
+},
+table, th, td {
+  border: 2px solid black;
 }
