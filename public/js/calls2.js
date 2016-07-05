@@ -7,15 +7,22 @@ $(document).ready(function(){
       xhr.send();
     }
   });
- 
-   /* type: "GET",
-    url: "http://matchapi.halberdtechnologies.com/api/Database?userID=TestFolder",
-    success: function(data, textStatus, jqXHR) {
-      alert("data");
-    } 
-  });
-*/
-  /*$.ajax({
+    
+    $.ajax({
+      type: "GET",
+      url: "http://matchapi.halberdtechnologies.com/api/Database?userID=TestFolder",
+      success: function(userID) {
+        for (var i = 0; i < userID.length; i++) {
+          var newListItem = buildListGroup(userID[i]);
+          $(".list-group").append(newListItem)
+        }
+      },
+      error: function(jqXHR, textStatus, errorThrown) {
+        alert("error";
+      } 
+    });
+
+  $.ajax({
     type: "POST",
     url: "http://matchapi.halberdtechnologies.com/api/Database?userID=TestFolder&database=TestFolder",
     success: function(response) {
@@ -29,4 +36,4 @@ $(document).ready(function(){
     function successCallback(responseObj){
       alert(JSON.stringify(responseObj));
     }
-  })      */
+  })      

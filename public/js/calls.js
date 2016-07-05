@@ -13,18 +13,15 @@ $(document).ready(function() {
       }
     })
   });
-});  
-             
-
-
- /* function buildTableRow(data) {
-    var db1Td = $("<td>").append(databaseData.name);
-    var db2Td = $("<td>").append(databaseData.name);
-    var db3Td = $("<td>").append(databaseData.name);
-    var db4Td = $("<td>").append(databaseData.name);
+  
+  function buildTableRow(userIDData) {
+    var db1Td = $("<td>").append(userIDData.name);
+    var db2Td = $("<td>").append(userIDData.name);
+    var db3Td = $("<td>").append(userIDData.name);
+    var db4Td = $("<td>").append(userIDData.name);
 
     return $("<tr>").append(databaseData.name);
       .append(imagesTd)
       .append(imagesTd)
       .append(imagesTd);
-  }*/
+  }

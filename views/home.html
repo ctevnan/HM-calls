@@ -17,21 +17,17 @@
       </div>    
       <div class="row">
         <div class="col-md-6">
-          <div class="input-group">
-            <div class="input-group-btn">
-              <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Action <span class="caret"></span></button>
-                <ul class="dropdown-menu">
-                  <li><a href="#">GET</a></li>
-                  <li><a href="#">POST</a></li>
-                </ul>
-              </div><!-- /btn-group -->
-            <input type="text" class="form-control" aria-label="...">
-          </div><!-- /input-group -->
-        </div><!-- /.col-lg-6 -->
-      </div>
-      <br/>
-      <br/>
-      <br/>
+          <div class="dropdown">
+            <button id="dLabel" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Dropdown trigger
+              <span class="caret"></span>
+            </button>
+            <ul class="dropdown-menu" aria-labelledby="dLabel">
+              <li>Get</li>
+              <li>Post</li>
+            </ul>
+          </div>
+        </div>
+      </div>  
       <div class="row">
         <div class="col-md-6">
           <div class="panel panel-default">
@@ -52,11 +48,14 @@
               </div>    
             </div>    
           </div> 
-      </div>      
-      <div class="row">
-        <div class="col-md-12">
-          <div class="panel panel-default">
-            <div class="panel-heading">Results</div>
+      </div> 
+      <div class="container">
+        <div class="row">
+          <div class="col-md-5">
+            <div class="list-group"></div>
+          </div>       
+          <div class="row">
+            <div class="col-md-7">
               <table class="table table-bordered">
                 <thead>
                   <th>Databases</th>
@@ -64,14 +63,16 @@
                 </thead>
                 <tbody></tbody>  
               </table>
+            </div>
           </div>
         </div>
-      </div>      
+      </div>        
       <nav class="navbar navbar-inverse navbar-fixed-bottom"></nav>  
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
     <script src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
     <script type="text/javascript" src="js/calls.js"></script>
     <script type="text/javascript" src="js/calls2.js"></script>
+    <script type="text/javascript" src="js/interact.js"></script>
   </body>
 </html>
