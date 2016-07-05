@@ -14,7 +14,7 @@ $(document).ready(function() {
     })
   });
   
-  function buildTableRow(userIDData) {
+ /* function buildTableRow(userIDData) {
     var db1Td = $("<td>").append(userIDData.name);
     var db2Td = $("<td>").append(userIDData.name);
     var db3Td = $("<td>").append(userIDData.name);
@@ -24,4 +24,4 @@ $(document).ready(function() {
       .append(imagesTd)
       .append(imagesTd)
       .append(imagesTd);
-  }
+  }*/

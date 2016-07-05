@@ -1,3 +1,3 @@
 $(Document).ready(function) {
-  $('.dropdown-toggle').dropdown()
-});
+  $("list-group").load(URL, data, callback);
+};

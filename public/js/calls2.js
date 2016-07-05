@@ -7,8 +7,24 @@ $(document).ready(function(){
       xhr.send();
     }
   });
+
+  $.ajax({
+    type:"GET",
+    url: "http://matchapi.halberdtechnologies.com/api/Database?userID=TestFolder",
+    success: function(data, textStatus, jqHXR) {
+      console.log(data);
+      console.log(textStatus);
+      console.log(jqHXR);
+    },
+    error: function(data, textStatus, jqXHR) {
+      console.log(data);
+      console.log(textStatus);
+      console.log(jqXHR);
+    }
+  })
+});  
     
-    $.ajax({
+    /*$.ajax({
       type: "GET",
       url: "http://matchapi.halberdtechnologies.com/api/Database?userID=TestFolder",
       success: function(userID) {
@@ -18,15 +34,17 @@ $(document).ready(function(){
         }
       },
       error: function(jqXHR, textStatus, errorThrown) {
-        alert("error";
+        alert("error");
       } 
-    });
+    });*/
 
   $.ajax({
     type: "POST",
     url: "http://matchapi.halberdtechnologies.com/api/Database?userID=TestFolder&database=TestFolder",
-    success: function(response) {
-    console.log(response); 
+    success: function(data, textStatus, jqXHR) {
+      console.log(data); 
+      console.log(textStatus);
+      console.log(jqXHR);
     },
     error: function(jqXHR, textStatus, errorThrown) {
       alert("errorThrown");
@@ -36,4 +54,5 @@ $(document).ready(function(){
     function successCallback(responseObj){
       alert(JSON.stringify(responseObj));
     }
-  })      
+  });
+});
