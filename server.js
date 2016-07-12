@@ -4,7 +4,7 @@ var multer = require('multer');
 var app = express();
 var morgan = require('morgan');
 var http = require('http');
-var PORT = process.env.PORT || 3000;
+var PORT = process.env.PORT || 80;
 var server = require('node-http-server');
 
 app.use(bodyParser.urlencoded({ extended: false}));
