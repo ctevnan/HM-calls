@@ -1,5 +1,6 @@
 var express = require('express');
 var bodyParser = require('body-parser');
+var multer = require('multer');
 var app = express();
 var morgan = require('morgan');
 var http = require('http');
