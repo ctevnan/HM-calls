@@ -1,6 +1,7 @@
 $(document).ready(function() {
-
-  function createCORSRequest(method, url) {
+  alert("things are working");
+});
+ /* function createCORSRequest(method, url) {
     var xhr = new XMLHttpRequest();
       xhr.open('GET', 'http://matchapi.halberdtechnologies.com/api/Database?userID=TestFolder', true);
       xhr.setResponseHeader('Access-Control-Allow-Origin', true);
@@ -14,7 +15,7 @@ $(document).ready(function() {
     success: function(databases) {
       console.log(databases);
     }
-  }); 
+  }); */
     
   /*$.ajax({
     type: "POST",
@@ -30,4 +31,3 @@ $(document).ready(function() {
       console.log(jqXHR);
     }
   });*/
-});
