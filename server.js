@@ -27,14 +27,6 @@ app.get("/", function(req, res) {
   res.sendFile(process.cwd() + "/views/home.html");
 });
 
-app.get("/userID/:folderName", function(req, res) {
-  matchapi.halberdtechnologies.search(req.params.folderName, function(err, folders) {
-    console.log(folders);
-    var firstFolder = folders[0];
-
-    res.send(JSON.stringify(firstFolder));  
-  });
-});
 
 app.listen(PORT, function() {
   console.log("Listening on port %s", PORT);
