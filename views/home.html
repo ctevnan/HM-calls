@@ -16,21 +16,36 @@
         </div>
       </div> 
       <div class="container">   
-        <div class="row">
-          <div class="col-md-12">
-            <div class="input-group">
-              <div class="input-group-btn">
-                <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Action <span class="caret"></span></button>
-                  <ul class="dropdown-menu">
-                    <li><a href="#">GET</a></li>
-                    <li><a href="#">POST</a></li>
-                  </ul>
-              </div><!-- /btn-group -->
-              <input type="text" class="form-control" aria-label="...">
-            </div><!-- /input-group -->
-          </div><!-- /.col-lg-6 --> 
+        <div class="row show-grid">
+          <div id="leftcolumn" class="span6">
+            <form id="paramsform" class="well" target="outputframe">
+              <fieldset>
+                <legend>HTTP Request Options</legend>
+                <br/>
+                <div class="row show-grid">
+                  <div class="span1">
+                    <div class="control-group">
+                      <label class="control-label" for="httpmethod">Method</label>
+                      <div class="controls">
+                        <select class="input-small" id="httpmethod"></select>
+                          <option>GET</option>
+                          <option>POST</option>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="span4"></div>
+                    <div class="control-group">
+                      <label class="control-label" for="urlvalue">Endpoint</label>
+                      <div class="controls">
+                        <input type="text" class="input-xlarge" id="urlvalue" value="urlvalue">
+                      </div>
+                    </div>
+                  </div>
+              </fieldset>
+            </form>
+          </div>
         </div>
-      </div> 
+      </div>                         
       <br/>   
       <div class="row">
         <div class="col-md-6">
