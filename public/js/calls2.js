@@ -3,6 +3,8 @@ $(document).ready(function() {
     var xhr = new XMLHttpRequest();
       xhr.open('GET', 'http://matchapi.halberdtechnologies.com/api/Database?userID=13e3961f-b35c-41b7-bc49-b0557e7c6d62', true);
       xhr.setResponseHeader('Access-Control-Allow-Origin', true);
+      xhr.setResponseHeader('Get', 'Post');
+      xhr.responseType = '';
       xhr.send();
     }  
   });
