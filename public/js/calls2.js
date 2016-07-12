@@ -1,7 +1,5 @@
 $(document).ready(function() {
-  alert("things are working");
-});
- /* function createCORSRequest(method, url) {
+  function createCORSRequest(method, url) {
     var xhr = new XMLHttpRequest();
       xhr.open('GET', 'http://matchapi.halberdtechnologies.com/api/Database?userID=TestFolder', true);
       xhr.setResponseHeader('Access-Control-Allow-Origin', true);
@@ -11,11 +9,11 @@ $(document).ready(function() {
 
   $.ajax({
     type:"GET",
-    url: "http://matchapi.halberdtechnologies.com/api/Database?userID=2bb2b13d-1663-41A8-88e2-a8ce163e8a28",
-    success: function(databases) {
-      console.log(databases);
+    url: "http://matchapi.halberdtechnologies.com/api/Database?userID=cad87234-911b-4d90-ba03-7e3ecb97ca62",
+    success: function(data) {
+      alert('data');
     }
-  }); */
+  });
     
   /*$.ajax({
     type: "POST",
