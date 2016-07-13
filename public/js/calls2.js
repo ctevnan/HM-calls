@@ -6,18 +6,4 @@ $(document).ready(function() {
       console.log(response);
     }
   });
-    
-  /*$.ajax({
-    type: "POST",
-    url: "http://matchapi.halberdtechnologies.com/api/Database?userID=TestFolder&database=TestFolder",
-    success: function(data, textStatus, jqXHR) {
-      console.log(data); 
-      console.log(textStatus);
-      console.log(jqXHR);
-    },
-    error: function(jqXHR, textStatus, errorThrown) {
-      console.log(data);
-      console.log(textStatus);
-      console.log(jqXHR);
-    }
-  });*/
+});    
