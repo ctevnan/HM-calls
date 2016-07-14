@@ -18,7 +18,7 @@
       <div class="container">   
         <div class="row show-grid">
           <div id="leftcolumn" class="span6">
-            <form id="paramsform" class="well" target="outputframe">
+            <form id="parameterform" class="well" target="outputframe">
               <fieldset>
                 <legend>HTTP Request Options</legend>
                 <br/>
@@ -46,9 +46,16 @@
                     <div class="control-group">
                       <label class="control-label" for="uuid">UUID</label>
                       <div class="controls">
-                        <input type="text" class="input-xlarge" id="uuidvalue" value="uuidvalue">
+                        <input type="text" class="input-xlarge" id="uuidvalue" value="uuid">
                       </div>
-                    </div>      
+                    </div>
+                    <div class="span 4"></div>
+                      <div class="control-group">
+                        <label class="control-label" for="database">Database</label>
+                        <div class="controls">
+                          <input type="text" class="input-xlarge" id="databasevalue" value="database">
+                        </div>
+                      </div>            
               </fieldset>
               <br/>
               <button type="submit" class="btn btn-default">Submit</button> 
