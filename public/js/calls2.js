@@ -6,12 +6,23 @@ $(document).ready(function() {
       console.log(response);
     }
   });
+  
+  $("form#data").submit(function(){
+    var formData = $(this).serialize();
 
-  // $.ajax({
-  //   type:"POST",
-  //   url: "http://matchapi.halberdtechnologies.com/api/",
-  //   success: function(response) {
-  //     console.log(response);
-  //   }
-  // });
+    $.ajax({
+      url: window.location.pathname,
+      type: 'POST',
+      data: formData,
+      async: false,
+      success: function (data) {
+        alert(data);
+      },
+      cache: false,
+      contentType: false,
+      processData: false
+    });
+
+    return false;
+  });  
 });    
