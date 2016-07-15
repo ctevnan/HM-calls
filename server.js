@@ -5,7 +5,7 @@ var upload = multer(); //parses multipart/ form-data
 var app = express();
 var morgan = require('morgan');
 var http = require('http');
-var PORT = process.env.PORT || 80;
+var PORT = process.env.PORT || 8080;
 var server = require('node-http-server');
 
 app.use(bodyParser.json()); //parses application/json
