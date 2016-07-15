@@ -6,4 +6,12 @@ $(document).ready(function() {
       console.log(response);
     }
   });
+
+  $.ajax({
+    type:"POST",
+    url: "http://matchapi.halberdtechnologies.com/api/FileUpload?userID=13e3961f-b35c-41b7-bc49-b0557e7c6d62&currentDB=Verify&mode=todatabase",
+    success: function(response) {
+      console.log(response);
+    }
+  });
 });    
