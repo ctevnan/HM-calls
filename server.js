@@ -10,6 +10,7 @@ var server = require('node-http-server');
 
 app.use(bodyParser.json()); //parses application/json
 app.use(bodyParser.urlencoded({ extended: true })); //parses application/x-www-form-urlencoded
+app.use(express.bodyParser());  //middleware to handle post requests
 
 app.post('/profile', upload.array(), function (req, res, next) {
   console.log(req.body);
