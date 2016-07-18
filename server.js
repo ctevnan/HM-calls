@@ -12,11 +12,14 @@ var PORT = process.env.PORT || 8080;
 
 /*app.use[express.json(), express.urlecoded()]; //for json and urlencoded endpoint*/
 
-/*app.use(express.multipart()); //for users to upload files to endpoint*/
-
 app.post('/profile', upload.array(), function (req, res, next) {
   console.log(req.body);
   res.json(req.body);
+});
+
+app.post('/file-upload', function (req, res, next) {
+  console.log(req.body);
+  console.log(req.files);
 });
 
 app.use(function (req, res, next) {
@@ -35,6 +38,10 @@ app.use("/js", express.static("public/js"));
 app.use('/static', express.static(__dirname + '/public'));
 
 app.get("/", function(req, res) {
+  res.sendFile(process.cwd() + "/views/home.html");
+});
+
+app.post("/", function(req, res) {
   res.sendFile(process.cwd() + "/views/home.html");
 });
 

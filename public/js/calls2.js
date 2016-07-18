@@ -8,7 +8,7 @@ $(document).ready(function() {
     var mode = $("mode").val();
     var halberdApiUrl = "http://matchapi.halberdtechnologies.com/api";
 
-    halberdApiUrl += "&userID" + userID += "&currentDB" + currentDB += "&mode" + mode;
+    halberdApiUrl += "&userID" + userID + "&currentDB" + currentDB + "&mode" + mode;
 
     $.ajax({
       type:"POST",
