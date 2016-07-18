@@ -2,7 +2,7 @@ var express = require('express');
 var app = express();
 var fs = require('fs-plus');
 var MultipartPoster = require('multipart-poster');
-
+var upload = multer({ dest: 'uploads/' });
 
 app.post('/file-upload', function (req, res) {
   //get temp location of file
