@@ -10,9 +10,9 @@ var MultipartPoster = require('multipart-poster');
 var PORT = process.env.PORT || 8080;
 // var server = require('node-http-server');
 
-app.use[express.json(), express.urlecoded()]; //for json and urlencoded endpoint
+/*app.use[express.json(), express.urlecoded()]; //for json and urlencoded endpoint*/
 
-app.use(express.multipart()); //for users to upload files to endpoint
+/*app.use(express.multipart()); //for users to upload files to endpoint*/
 
 app.post('/profile', upload.array(), function (req, res, next) {
   console.log(req.body);
