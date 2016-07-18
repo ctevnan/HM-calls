@@ -4,14 +4,20 @@ var multer = require('multer');
 var upload = multer({ dest: 'uploads/' }); //parses multipart/ form-data
 var app = express();
 var morgan = require('morgan');
-var http = require('http');
 var fs = require('fs-plus');
+var formidible = require('formidible');
+var http = require('http');
+var util = require('util');
 var MultipartPoster = require('multipart-poster');
 var myObj = eval( '(' + jsontext + ')'); //json output txt compiled
 var PORT = process.env.PORT || 8080;
 
 var server = http.createServer(function (req, res) {
-  displayForm(res);
+  if (req.method.toLowerCase() == 'get') {
+    displayForm(res);
+  } else if (req.method.toLowerCase() == 'post') {
+    processAllFieldsOfTheForm(req, res);
+  }
 });
 
 function displayForm(res) {
@@ -22,6 +28,22 @@ function displayForm(res) {
     });
     res.write(data);
     res.end();
+  });
+}
+
+function processAllFieldsOfTheForm(req, res) {
+  var form = new formidible.IncomingForm();
+
+  form.parse(req, function (err, fields, files) {
+    //store the data from the fields in data store
+    res.writeHead(200, {
+      'content-type': 'text/plain'
+    });
+    res.write('recieved the data:\n\n');
+    res.end(util.inspect({
+      fields: fields,
+      files: files
+    }));
   });
 }
 
