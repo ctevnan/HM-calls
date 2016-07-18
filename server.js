@@ -5,11 +5,10 @@ var upload = multer({ dest: 'uploads/' }); //parses multipart/ form-data
 var app = express();
 var morgan = require('morgan');
 var fs = require('fs-plus');
-var formidible = require("formidible");
+var formidable = require("formidable");
 var http = require('http');
 var util = require('util');
 var MultipartPoster = require('multipart-poster');
-var myObj = eval( '(' + jsontext + ')'); //json output txt compiled
 var PORT = process.env.PORT || 8080;
 
 var server = http.createServer(function (req, res) {
@@ -32,7 +31,7 @@ function displayForm(res) {
 }
 
 function processAllFieldsOfTheForm(req, res) {
-  var form = new formidible.IncomingForm();
+  var form = new formidable.IncomingForm();
 
   form.parse(req, function (err, fields, files) {
     //store the data from the fields in data store
@@ -82,6 +81,10 @@ app.post("/", function(req, res) {
   res.sendFile(process.cwd() + "/views/home.html");
 });
 
+app.post("/", function(req, res) {
+  res.sendFile(process.cwd() + "/views/form.html");
+})
+//form.html
 
 app.listen(PORT, function() {
   console.log("Listening on port %s", PORT);
