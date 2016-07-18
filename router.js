@@ -1,16 +1,17 @@
 var express = require('express');
 var app = express();
 var fs = require('fs-plus');
+var MultipartPoster = require('multipart-poster');
 
 //respond with "hello world" when a get request is made
 app.get('/', function(req, res) {
   res.send('hello world');
 });
 
-app.post('/file-upload', function(req, res, next) {
+/*app.post('/file-upload', function(req, res, next) {
   console.log(req.body);
   console.log(req.files);
-});
+});*/
 
 app.post('/file-upload', function(req, res) {
   //get temp location of file

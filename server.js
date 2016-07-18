@@ -6,11 +6,13 @@ var app = express();
 var morgan = require('morgan');
 var http = require('http');
 var fs = require('fs-plus');
+var MultipartPoster = require('multipart-poster');
 var PORT = process.env.PORT || 8080;
 // var server = require('node-http-server');
 
-app.use(bodyParser.json()); //parses application/json
-app.use(bodyParser.urlencoded({ extended: true })); //parses application/x-www-form-urlencoded
+app.use[express.json(), express.urlecoded()]; //for json and urlencoded endpoint
+
+app.use(express.multipart()); //for users to upload files to endpoint
 
 app.use(express.bodyParser({uploadDir:'./uploads'}));
 //files will be uploaded to the uploads dir 
