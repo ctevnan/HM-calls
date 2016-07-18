@@ -1,7 +1,7 @@
 var express = require('express');
 var bodyParser = require('body-parser');
 var multer = require('multer');
-var upload = multer(); //parses multipart/ form-data
+var upload = multer({ dest: 'uploads/' }); //parses multipart/ form-data
 var app = express();
 var morgan = require('morgan');
 var http = require('http');
@@ -13,9 +13,6 @@ var PORT = process.env.PORT || 8080;
 app.use[express.json(), express.urlecoded()]; //for json and urlencoded endpoint
 
 app.use(express.multipart()); //for users to upload files to endpoint
-
-app.use(express.bodyParser({uploadDir:'./uploads'}));
-//files will be uploaded to the uploads dir 
 
 app.post('/profile', upload.array(), function (req, res, next) {
   console.log(req.body);
