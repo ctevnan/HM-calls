@@ -7,7 +7,7 @@ $(document).ready(function() {
     }
   });
   
-  $("form#data").submit(function(){
+  /*$("form#data").submit(function(){
     var formData = $(this).serialize();
 
     $.ajax({
@@ -24,5 +24,5 @@ $(document).ready(function() {
     });
 
     return false;
-  });  
+  }); */ 
 });    
