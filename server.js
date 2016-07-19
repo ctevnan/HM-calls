@@ -55,7 +55,22 @@ function processFormFieldsIndividual(req, res) {
     console.log(value);
     fields[field] = value;
   });
-
+  //bc when ea file in form is parsed
+  form.on('file', function (name, file) {
+    console.log(name);
+    console.log(file);
+    fields[name] = file; //storing the files meta in fields array
+  });
+  //db for file upload progress
+  form.on('progress', function (bytesRecieved, bytesExpected) {
+    var progress = {
+      type: 'progress',
+      bytesRecieved: bytesRecieved,
+      bytesExpected: bytesExpected
+    };
+    console.log(progress); //logging progress in console.
+  });
+  //cb at the end of the form
   form.on('end', function() {
     res.writeHead(200, {
       'content-type': 'text/plain'
