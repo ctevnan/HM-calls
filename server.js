@@ -1,16 +1,52 @@
 var express = require('express');
 var bodyParser = require('body-parser');
-var multer = require('multer');
-var upload = multer({ dest: './uploads' }); //parses multipart/ form-data
+/*var multer = require('multer');*/
+/*var upload = multer({ dest: './uploads' });*/ //parses multipart/ form-data
 var logger = require('morgan');
-var fs = require('fs-plus');
+/*var fs = require('fs-plus');*/
 var formidable = require("formidable");
-var http = require('http');
-var util = require('util');
-var MultipartPoster = require('multipart-poster');
+var path = require('path'); //used for file path
+var fs = require('fs-extra'); //file system- needed for renaming file
+/*var http = require('http');*/
+/*var util = require('util');*/
+/*var MultipartPoster = require('multipart-poster');*/
 var PORT = process.env.PORT || 8080;
 
 var app = express();
+
+app.use(express.static(path.join(__dirname, 'public')));
+
+//bodyparser needed to allow express to see the uploaded files
+
+app.use(bodyParser({defer: true}));
+app.route('/upload')
+.post(function (req, res, next) {
+
+var form = new formidable.IncomingForm();
+//formidable uploads to OS's tmp dir by default
+form.uploadDir = "./img"; //set upload dir
+form.keepExtensions = true; //keep file extension
+
+form.parse(req, function(err, fields, files) {
+  res.writeHead(200, {'content-type': 'text/plain'});
+  res.write('recieved upload: \n\n');
+  console.log("form.bytesReceived");
+  //for testing
+  console.log("file size: "+JSON.stringify(files.fileUploaded.size));
+  console.log("file path: "+JSON.stringify(files.fileUploaded.path));
+  console.log("file name: "+JSON.stringify(files.fileUploaded.name));
+  console.log("file type: "+JSON.stringify(files.fileUploaded.type));
+  console.log("lastModifiedDate: "+JSON.stringify(files.fileUploaded.lastModifiedDate));
+
+  //formidable changes name of uploaded file
+  //rename file
+  fs.rename(files.fileUploaded.path, './img/'+files.fileUploaded.name, function (err) {
+    if (err)
+      throw err;
+    console.log('rename complete');
+  });
+  res.end();
+});
 
 var server = http.createServer(function (req, res) {
   if (req.method.toLowerCase() == 'get') {
@@ -21,7 +57,7 @@ var server = http.createServer(function (req, res) {
 });
 
 function displayForm(res) {
-  fs-plus.readFile('./views/form.html', function (err, data) {
+  fs.readFile('./views/form.html', function (err, data) {
     res.writeHead(200, {
       'Content-Type': 'text/html',
         'Content-Length': data.length
