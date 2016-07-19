@@ -149,21 +149,20 @@ app.use("/js", express.static("public/js"));
 app.use('/static', express.static(__dirname + '/public'));
 
 app.get("/", function(req, res) {
-  res.sendFile(process.cwd() + "/views/home.html");
+  res.sendFile(process.cwd() + "/public/index.html");
 });
 
 app.post("/", function(req, res) {
-  res.sendFile(process.cwd() + "/views/home.html");
+  res.sendFile(process.cwd() + "/public/index.html");
 });
 
 app.get("/", function(req, res) {
-  res.sendFile(process.cwd() + "/views/form.html");
+  res.sendFile(process.cwd() + "/layouts/form.html");
 });
 
 app.post("/", function(req, res) {
-  res.sendFile(process.cwd() + "/views/form.html");
-})
-//form.html
+  res.sendFile(process.cwd() + "/layouts/form.html");
+});
 
 app.listen(PORT, function() {
   console.log("Listening on port %s", PORT);
