@@ -1,8 +1,7 @@
 var express = require('express');
 var bodyParser = require('body-parser');
 var multer = require('multer');
-var upload = multer({ dest: 'uploads/' }); //parses multipart/ form-data
-var app = express();
+var upload = multer({ dest: './uploads' }); //parses multipart/ form-data
 var logger = require('morgan');
 var fs = require('fs-plus');
 var formidable = require("formidable");
@@ -10,6 +9,8 @@ var http = require('http');
 var util = require('util');
 var MultipartPoster = require('multipart-poster');
 var PORT = process.env.PORT || 8080;
+
+var app = express();
 
 var server = http.createServer(function (req, res) {
   if (req.method.toLowerCase() == 'get') {
@@ -83,12 +84,13 @@ function processFormFieldsIndividual(req, res) {
   form.parse(req);
 }
 
-/*app.use[express.json(), express.urlecoded()]; //for json and urlencoded endpoint*/
+app.use(bodyParser.json()); //parses application/json
+app.use(bodyParser.urlencoded({ extended: true })); 
 
-/*app.post('/profile', upload.array(), function (req, res, next) {
+app.post('/profile', upload.array(), function (req, res, next) {
   console.log(req.body);
   res.json(req.body);
-});*/
+});
 
 /*app.post('/file-upload', function (req, res, next) {
   console.log(req.body);
