@@ -118,6 +118,10 @@ app.post("/", function(req, res) {
   res.sendFile(process.cwd() + "/views/home.html");
 });
 
+app.get("/", function(req, res) {
+  res.sendFile(process.cwd() + "/views/form.html");
+});
+
 app.post("/", function(req, res) {
   res.sendFile(process.cwd() + "/views/form.html");
 })
