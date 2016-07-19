@@ -20,7 +20,7 @@ var server = http.createServer(function (req, res) {
 });
 
 function displayForm(res) {
-  fs.readFile('/views/form.html', function (err, data) {
+  fs.readFile('./views/form.html', function (err, data) {
     res.writeHead(200, {
       'Content-Type': 'text/html',
         'Content-Length': data.length
@@ -51,8 +51,8 @@ function processFormFieldsIndividual(req, res) {
   var fields = [];
   var form = new formidable.IncomingForm();
   form.on('field', function (field, value) {
-    console.log(field);
-    console.log(value);
+    console.log('field');
+    console.log('value');
     fields[field] = value;
   });
   //bc when ea file in form is parsed
