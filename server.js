@@ -3,7 +3,7 @@ var bodyParser = require('body-parser');
 var multer = require('multer');
 var upload = multer({ dest: 'uploads/' }); //parses multipart/ form-data
 var app = express();
-var morgan = require('morgan');
+var logger = require('morgan');
 var fs = require('fs-plus');
 var formidable = require("formidable");
 var http = require('http');
@@ -20,7 +20,7 @@ var server = http.createServer(function (req, res) {
 });
 
 function displayForm(res) {
-  fs.readFile('./views/form.html', function (err, data) {
+  fs-plus.readFile('./views/form.html', function (err, data) {
     res.writeHead(200, {
       'Content-Type': 'text/html',
         'Content-Length': data.length
