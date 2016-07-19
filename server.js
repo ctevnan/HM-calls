@@ -15,12 +15,12 @@ var server = http.createServer(function (req, res) {
   if (req.method.toLowerCase() == 'get') {
     displayForm(res);
   } else if (req.method.toLowerCase() == 'post') {
-    processAllFieldsOfTheForm(req, res);
+    processFormFieldsIndividual(req, res);
   }
 });
 
 function displayForm(res) {
-  fs.readFile('form.html', function (err, data) {
+  fs.readFile('views/form.html', function (err, data) {
     res.writeHead(200, {
       'Content-Type': 'text/html',
         'Content-Length': data.length
@@ -46,17 +46,39 @@ function processAllFieldsOfTheForm(req, res) {
   });
 }
 
+function processFormFieldsIndividual(req, res) {
+  //store data from the fields in data store ie file/db
+  var fields = [];
+  var form = new formidable.IncomingForm();
+  form.on('field', function (field, value) {
+    console.log(field);
+    console.log(value);
+    fields[field] = value;
+  });
+
+  form.on('end', function() {
+    res.writeHead(200, {
+      'content-type': 'text/plain'
+    });
+    res.write('recieved the data:\n\n');
+    res.end(util.inspect({
+      fields: fields
+    }));
+  });
+  form.parse(req);
+}
+
 /*app.use[express.json(), express.urlecoded()]; //for json and urlencoded endpoint*/
 
-app.post('/profile', upload.array(), function (req, res, next) {
+/*app.post('/profile', upload.array(), function (req, res, next) {
   console.log(req.body);
   res.json(req.body);
-});
+});*/
 
-app.post('/file-upload', function (req, res, next) {
+/*app.post('/file-upload', function (req, res, next) {
   console.log(req.body);
   console.log(req.files);
-});
+});*/
 
 app.use(function (req, res, next) {
   res.header("Access-Control-Allow-Origin", "*");
