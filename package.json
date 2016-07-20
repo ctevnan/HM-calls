@@ -22,6 +22,7 @@
     "express": "^4.13.4",
     "formidable": "^1.0.17",
     "fs-extra": "^0.30.0",
+    "http": "0.0.0",
     "morgan": "^1.7.0",
     "multipart-poster": "^1.0.0",
     "path": "^0.12.7",
