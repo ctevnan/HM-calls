@@ -37,6 +37,13 @@ app.post('/upload', function (req, res) {
   return;
 });
 
+server.post('/upload', function(req, res) {
+  console.log("Uploading!");
+  if (req.method.toLowerCase() == 'post') {
+    res.write('post it like a postman');
+  }
+});
+
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.use(express.static('public'));
