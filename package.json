@@ -26,6 +26,7 @@
     "morgan": "^1.7.0",
     "multipart-poster": "^1.0.0",
     "path": "^0.12.7",
-    "send-data": "^8.0.0"
+    "send-data": "^8.0.0",
+    "util": "^0.10.3"
   }
 }
