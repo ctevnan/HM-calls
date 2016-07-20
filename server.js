@@ -4,6 +4,7 @@ var logger = require('morgan');
 var formidable = require("formidable");
 var path = require('path'); //used for file path
 var fs = require('fs-extra'); //file system- needed for renaming file
+var url = require('url');
 var http = require('http');
 var textBody = require("body");
 var jsonBody = require("body/json");
@@ -11,48 +12,12 @@ var formBody = require("body/form");
 var anyBody = require("body/any");
 var sendJson = require("send-data/json");
 
-var PORT = 8080;
-
-http.createServer(function handleRequest(req, res) {
-  function send(err, body) {
-    sendJson(req, res, body)
-  }
-  if (req.url === "/body") {
-    //all functions cann be called with (req, cb)
-    textBody(req, send)
-  } else if (req.url === "/form") {
-    //all funct can be called w (req, opts, cb)
-    formBody(req, {}, send)
-  } else if (req.url === "/json") {
-    //all funct can be called w (req, res, cb)
-    jsonBody(req, res, send)
-  } else if (req.url === "/any") {
-    //all funct can be called w (req, res, opts, cb)
-    anyBody(req, res, {}, send)
-  }
-})
-
-//body parses the request body and returns it in the cb. jsonBody and formBody
-//call json.parse and querystring.parse resp. on the body. anyBody will detect
-//the content type of the req and use the approp body method
-
 app.use(express.static(path.join(__dirname, 'public')));
 
 var form = new formidable.IncomingForm();
 //formidable uploads to OS's tmp dir by default
 form.uploadDir = "./img"; //set upload dir
 form.keepExtensions = true; //keep file extension
-
-/*form.parse(function(err, fields, files) {
-  res.writeHead(200, {'content-type': 'text/plain'});
-  res.write('recieved upload: \n\n');
-  console.log("form.bytesReceived");
-  //for testing
-  console.log("file size: "+JSON.stringify(files.fileUploaded.size));
-  console.log("file path: "+JSON.stringify(files.fileUploaded.path));
-  console.log("file name: "+JSON.stringify(files.fileUploaded.name));
-  console.log("file type: "+JSON.stringify(files.fileUploaded.type));
-  console.log("lastModifiedDate: "+JSON.stringify(files.fileUploaded.lastModifiedDate));*/
 
   //formidable changes name of uploaded file
   //rename file
@@ -63,14 +28,6 @@ form.keepExtensions = true; //keep file extension
   });
   res.end();
 });
-
-/*var server = http.createServer(function (req, res) {
-  if (req.method.toLowerCase() == 'get') {
-    displayForm(res);
-  } else if (req.method.toLowerCase() == 'post') {
-    processFormFieldsIndividual(req, res);
-  }
-});*/
 
 function displayForm(res) {
   fs.readFile('./views/layouts/form.html', function (err, data) {
@@ -142,31 +99,28 @@ function setHeaders (req, res, next) {
   next();
 };
 
-/*app.use(express.static('public'));*/
-
-/*app.use(express.static('images'));*/
-
-/*app.use("/js", express.static("public/js"));*/
-
-//to get /style.css
-/*app.use('/static', express.static(__dirname + '/public'));*/
-
-/*app.get("/", function(req, res) {
-  res.sendFile(process.cwd() + "/public/index.html");
+/*//body parses the request body and returns it in the cb. jsonBody and formBody
+//call json.parse and querystring.parse resp. on the body. anyBody will detect
+//the content type of the req and use the approp body method
+http.createServer(function handleRequest(req, res) {
+  function send(err, body) {
+    sendJson(req, res, body)
+  }
+  if (req.url === "/body") {
+    //all functions cann be called with (req, cb)
+    textBody(req, send)
+  } else if (req.url === "/form") {
+    //all funct can be called w (req, opts, cb)
+    formBody(req, {}, send)
+  } else if (req.url === "/json") {
+    //all funct can be called w (req, res, cb)
+    jsonBody(req, res, send)
+  } else if (req.url === "/any") {
+    //all funct can be called w (req, res, opts, cb)
+    anyBody(req, res, {}, send)
+  }
+});*/
+var port = 3000;
+app.listen(port, function() {
+  console.log("listening on port:" + port);
 });
-
-app.post("/", function(req, res) {
-  res.sendFile(process.cwd() + "/public/index.html");
-});
-
-app.get("/", function(req, res) {
-  res.sendFile(process.cwd() + "/layouts/form.html");
-});
-
-app.post("/", function(req, res) {
-  res.sendFile(process.cwd() + "/layouts/form.html");
-});
-*/
-app.listen(PORT, function() {
-  console.log("Listening on port %s", PORT);
-;
