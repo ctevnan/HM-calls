@@ -14,24 +14,47 @@ var sendJson = require("send-data/json");
 
 var PORT = process.env.PORT || 8080;
 
-if (req.url == '/upload' && req.method.toLowerCase() == 'post') {
+http.createServer(function (req, res) {
+  if (req.url == '/upload' && req.method.toLowerCase() == 'post') {
+  //parse a file upload  
   var form = new formidable.IncomingForm();
+
   form.parse(req, function (err, fields, files) {
     res.writeHead(200, {'content-type': 'text/plain'});
-    res.write('received upload:\n\n');
+    res.write('Received upload:\n\n');
     res.end(util.inspect({fields: fields, files: files}));
   });
-  return;
-});
+  
+  form.on('end', function(fields, files) {
+    //temp location of our uploaded file
+    var temp_path = this.openedFiles[0].path;
+    //file name of the uploaded file
+    var file_name = this.openedFiles[0].name;
+    //location where we want to copy the uploaded file
+    var new_location = 'c:/localhost/nodejs/';
 
-res.writeHead(200, {'content-type': 'text/html'});
-res.end(
-  '<form action="/upload" enctype="multipart/form-data" method="post">'+
-  '<input type="text" name="title"><br>'+
-  '<input type="file" name="upload" multiple="multiple"><br>'+
-  '<input-type="submit" value="Upload">'+
-  '</form>');
-);
+    fs.copy(temp_path, new_location + file_name, function(err) {
+      if (err) {
+        console.error(err);
+      } else {
+        console.log("success!");
+      }
+    });
+  });
+
+  return;
+}
+  //display file upload form
+  res.writeHead(200, {'content-type': 'text/html'});
+  res.end(
+    '<form action="/upload" enctype="multipart/form-data" method="post">'+
+    '<input type="text" name="title"><br>'+
+    '<input type="file" name="upload" multiple="multiple"><br>'+
+    '<input-type="submit" value="Upload">'+
+    '</form>'
+  );
+}).listen(80);    
+  
 
 app.use(express.static(path.join(__dirname, 'public')));
 
