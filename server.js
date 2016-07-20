@@ -1,5 +1,5 @@
 var express = require('express');
-var bodyParser = require('body-parser');
+/*var bodyParser = require('body-parser');*/
 /*var multer = require('multer');*/
 /*var upload = multer({ dest: './uploads' });*/ //parses multipart/ form-data
 var logger = require('morgan');
@@ -16,10 +16,11 @@ var app = express();
 
 app.use(express.static(path.join(__dirname, 'public')));
 
-//bodyparser needed to allow express to see the uploaded files
+app.use(express.json());
 
-app.use(bodyParser({defer: true}));
-app.route('/upload')
+app.use(express.urlencoded());
+
+app.route('./uploads')
 .post(function (req, res, next) {
 
 var form = new formidable.IncomingForm();
@@ -57,7 +58,7 @@ var server = http.createServer(function (req, res) {
 });
 
 function displayForm(res) {
-  fs.readFile('./views/form.html', function (err, data) {
+  fs.readFile('./views/layouts/form.html', function (err, data) {
     res.writeHead(200, {
       'Content-Type': 'text/html',
         'Content-Length': data.length
@@ -120,13 +121,10 @@ function processFormFieldsIndividual(req, res) {
   form.parse(req);
 }
 
-app.use(bodyParser.json()); //parses application/json
-app.use(bodyParser.urlencoded({ extended: true })); 
-
-app.post('/profile', upload.array(), function (req, res, next) {
+/*app.post('/profile', upload.array(), function (req, res, next) {
   console.log(req.body);
   res.json(req.body);
-});
+});*/
 
 /*app.post('/file-upload', function (req, res, next) {
   console.log(req.body);
@@ -166,4 +164,5 @@ app.post("/", function(req, res) {
 
 app.listen(PORT, function() {
   console.log("Listening on port %s", PORT);
+});
 });
