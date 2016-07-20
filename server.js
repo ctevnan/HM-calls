@@ -17,8 +17,25 @@ var PORT = process.env.PORT || 8080;
 app.get('/upload', function (req, res) {
   res.writeHead(200, {'content-type': 'text/html'});
   res.end(
-    '<form action="/upload" enctype="multipart/form-data" method="post">' +
-})
+    '<form action="/upload" enctype="multipart/form-data" method="post">'+
+    '<input type="text" name="title"><br>'+
+    '<input type="file" name="upload" multiple="multiple"><br>'+
+    '<input-type="submit" value="Upload">'+
+    '</form>');
+});
+
+app.post('/upload', function (req, res) {
+  var form = new formidable.IncomingForm();
+  form.uploadDir = '.';
+  form.keepExtensions = true;
+
+  form.parse(req, function(err, fields, files) {
+    res.writeHead(200, {'content-type': 'text/plain'});
+    res.write('received upload:\n\n');
+    res.end(util.inspect({fields: fields, files: files}));
+  });
+  return;
+});
 
 app.use(express.static(path.join(__dirname, 'public')));
 
