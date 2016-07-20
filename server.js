@@ -1,11 +1,11 @@
 var express = require("express");
 var app = express();
 var logger = require("morgan");
-var util = require("util");
 var formidable = require("formidable");
-var path = require("path"); //used for file path
-var fs = require("fs-extra"); //file system- needed for renaming file
 var http = require("http");
+var util = require("util");
+var fs = require("fs-extra"); //file system- needed for renaming file
+var path = require("path"); //used for file path
 var textBody = require("body");
 var jsonBody = require("body/json");
 var formBody = require("body/form");
@@ -14,28 +14,24 @@ var sendJson = require("send-data/json");
 
 var PORT = process.env.PORT || 8080;
 
-app.get('/upload', function (req, res) {
-  res.writeHead(200, {'content-type': 'text/html'});
-  res.end(
-    '<form action="/upload" enctype="multipart/form-data" method="post">'+
-    '<input type="text" name="title"><br>'+
-    '<input type="file" name="upload" multiple="multiple"><br>'+
-    '<input-type="submit" value="Upload">'+
-    '</form>');
-});
-
-app.post('/upload', function (req, res) {
+if (req.url == '/upload' && req.method.toLowerCase() == 'post') {
   var form = new formidable.IncomingForm();
-  form.uploadDir = '.';
-  form.keepExtensions = true;
-
-  form.parse(req, function(err, fields, files) {
+  form.parse(req, function (err, fields, files) {
     res.writeHead(200, {'content-type': 'text/plain'});
     res.write('received upload:\n\n');
     res.end(util.inspect({fields: fields, files: files}));
   });
   return;
 });
+
+res.writeHead(200, {'content-type': 'text/html'});
+res.end(
+  '<form action="/upload" enctype="multipart/form-data" method="post">'+
+  '<input type="text" name="title"><br>'+
+  '<input type="file" name="upload" multiple="multiple"><br>'+
+  '<input-type="submit" value="Upload">'+
+  '</form>');
+);
 
 app.use(express.static(path.join(__dirname, 'public')));
 
