@@ -1,3 +1,7 @@
+var send = require("send-data");
+var sendJson = require("send-data/json");
+var sendHtml = require("send-data/html");
+var sendError = require("send-data/error");
 var http = require("http");
 var express = require('express');
 var Router = require("routes-router");

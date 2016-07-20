@@ -1,4 +1,5 @@
 var express = require('express');
+var app = express();
 var logger = require('morgan');
 var formidable = require("formidable");
 var path = require('path'); //used for file path
@@ -10,9 +11,7 @@ var formBody = require("body/form");
 var anyBody = require("body/any");
 var sendJson = require("send-data/json");
 
-var PORT = process.env.PORT || 8080;
-
-var app = express();
+var PORT = 8080;
 
 http.createServer(function handleRequest(req, res) {
   function send(err, body) {
@@ -39,19 +38,12 @@ http.createServer(function handleRequest(req, res) {
 
 app.use(express.static(path.join(__dirname, 'public')));
 
-app.use(json());
-
-app.use(urlencoded());
-
-app.route('./uploads')
-.post(function (req, res, next) {
-
 var form = new formidable.IncomingForm();
 //formidable uploads to OS's tmp dir by default
 form.uploadDir = "./img"; //set upload dir
 form.keepExtensions = true; //keep file extension
 
-form.parse(req, function(err, fields, files) {
+/*form.parse(function(err, fields, files) {
   res.writeHead(200, {'content-type': 'text/plain'});
   res.write('recieved upload: \n\n');
   console.log("form.bytesReceived");
@@ -60,7 +52,7 @@ form.parse(req, function(err, fields, files) {
   console.log("file path: "+JSON.stringify(files.fileUploaded.path));
   console.log("file name: "+JSON.stringify(files.fileUploaded.name));
   console.log("file type: "+JSON.stringify(files.fileUploaded.type));
-  console.log("lastModifiedDate: "+JSON.stringify(files.fileUploaded.lastModifiedDate));
+  console.log("lastModifiedDate: "+JSON.stringify(files.fileUploaded.lastModifiedDate));*/
 
   //formidable changes name of uploaded file
   //rename file
@@ -72,13 +64,13 @@ form.parse(req, function(err, fields, files) {
   res.end();
 });
 
-var server = http.createServer(function (req, res) {
+/*var server = http.createServer(function (req, res) {
   if (req.method.toLowerCase() == 'get') {
     displayForm(res);
   } else if (req.method.toLowerCase() == 'post') {
     processFormFieldsIndividual(req, res);
   }
-});
+});*/
 
 function displayForm(res) {
   fs.readFile('./views/layouts/form.html', function (err, data) {
@@ -144,32 +136,22 @@ function processFormFieldsIndividual(req, res) {
   form.parse(req);
 }
 
-/*app.post('/profile', upload.array(), function (req, res, next) {
-  console.log(req.body);
-  res.json(req.body);
-});*/
-
-/*app.post('/file-upload', function (req, res, next) {
-  console.log(req.body);
-  console.log(req.files);
-});*/
-
-app.use(function (req, res, next) {
+function setHeaders (req, res, next) {
   res.header("Access-Control-Allow-Origin", "*");
   res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
   next();
-});
+};
 
-app.use(express.static('public'));
+/*app.use(express.static('public'));*/
 
-app.use(express.static('images'));
+/*app.use(express.static('images'));*/
 
-app.use("/js", express.static("public/js"));
+/*app.use("/js", express.static("public/js"));*/
 
 //to get /style.css
-app.use('/static', express.static(__dirname + '/public'));
+/*app.use('/static', express.static(__dirname + '/public'));*/
 
-app.get("/", function(req, res) {
+/*app.get("/", function(req, res) {
   res.sendFile(process.cwd() + "/public/index.html");
 });
 
@@ -184,8 +166,7 @@ app.get("/", function(req, res) {
 app.post("/", function(req, res) {
   res.sendFile(process.cwd() + "/layouts/form.html");
 });
-
+*/
 app.listen(PORT, function() {
   console.log("Listening on port %s", PORT);
-});
-});
+;
