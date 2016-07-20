@@ -1,24 +1,47 @@
 var express = require('express');
-/*var bodyParser = require('body-parser');*/
-/*var multer = require('multer');*/
-/*var upload = multer({ dest: './uploads' });*/ //parses multipart/ form-data
 var logger = require('morgan');
-/*var fs = require('fs-plus');*/
 var formidable = require("formidable");
 var path = require('path'); //used for file path
 var fs = require('fs-extra'); //file system- needed for renaming file
-/*var http = require('http');*/
-/*var util = require('util');*/
-/*var MultipartPoster = require('multipart-poster');*/
+var http = require('http');
+var textBody = require("body");
+var jsonBody = require("body/json");
+var formBody = require("body/form");
+var anyBody = require("body/any");
+var sendJson = require("send-data/json");
+
 var PORT = process.env.PORT || 8080;
 
 var app = express();
 
+http.createServer(function handleRequest(req, res) {
+  function send(err, body) {
+    sendJson(req, res, body)
+  }
+  if (req.url === "/body") {
+    //all functions cann be called with (req, cb)
+    textBody(req, send)
+  } else if (req.url === "/form") {
+    //all funct can be called w (req, opts, cb)
+    formBody(req, {}, send)
+  } else if (req.url === "/json") {
+    //all funct can be called w (req, res, cb)
+    jsonBody(req, res, send)
+  } else if (req.url === "/any") {
+    //all funct can be called w (req, res, opts, cb)
+    anyBody(req, res, {}, send)
+  }
+})
+
+//body parses the request body and returns it in the cb. jsonBody and formBody
+//call json.parse and querystring.parse resp. on the body. anyBody will detect
+//the content type of the req and use the approp body method
+
 app.use(express.static(path.join(__dirname, 'public')));
 
-app.use(express.json());
+app.use(json());
 
-app.use(express.urlencoded());
+app.use(urlencoded());
 
 app.route('./uploads')
 .post(function (req, res, next) {
