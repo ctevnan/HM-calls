@@ -19,7 +19,7 @@ http.createServer(function (req, res) {
   //parse a file upload  
   var form = new formidable.IncomingForm();
   
-  form.uploadDir = "./apiCalls/img"; //set upload dir
+  form.uploadDir = "C:/Users/Carolyn/apiCalls/uploadDir"; //set upload dir
   form.parse(req, function (err, fields, files) {
     res.writeHead(200, {'content-type': 'text/plain'});
     res.write('Received upload:\n\n');
@@ -37,7 +37,7 @@ http.createServer(function (req, res) {
     //file name of the uploaded file
     var file_name = this.openedFiles[0].name;
     //location where we want to copy the uploaded file
-    var new_location = 'c:/localhost/nodejs/';
+    var new_location = 'C:/Users/Carolyn/apiCalls/uploadDir';
 
     fs.copy(temp_path, new_location + file_name, function(err) {
       if (err) {
@@ -53,11 +53,23 @@ http.createServer(function (req, res) {
   //display file upload form
   res.writeHead(200, {'content-type': 'text/html'});
   res.end(
-    '<form action="/upload" enctype="multipart/form-data" method="post">'+
-    '<input type="text" name="title"><br>'+
-    '<input type="file" name="upload" multiple="multiple"><br>'+
-    '<input-type="submit" value="Upload">'+
-    '</form>'
+      '<form action="/upload" enctype="multipart/form-data" method="post">'+
+      '<fieldset>'+
+      '<label for="httpmethod">Method</label>'+
+      '<input type="text" id="method" name="method" placeholder="Enter http method"><br>'+
+        '<label for="url">Endpoint</label>'+
+        '<input type="text" id="urlvalue" name="url" placeholder="Enter url endpoint"><br>'+
+        '<label for="userID">userID</label>'+
+        '<input type="text" id="userIDValue" name="userID" placeholder="Enter UUID"><br>'+
+        '<label for="currentDB">currentDB</label>'+
+        '<input type="text" id="currentDBValue" name="currentDB" placeholder="Enter currentDB"><br>'+
+        '<label for="mode">Mode</label>'+
+        '<input type="text" id="modevalue" name="mode" placeholder="Enter Match to perform a match, enter ToDatabase to upload to database"><br>'+
+        '<label for="fileupload">File upload</label>'+
+        '<input type="file" id="fileinput" name="fileUpload"><br>'+                     
+        '<input type="submit" value="Upload">'+
+      '</fieldset>'+   
+    '</form>' 
   );
 }).listen(80);    
   
@@ -72,6 +84,14 @@ app.use("/js", express.static("public/js"));
 
 app.get("/", function(req, res) {
   res.sendFile(process.cwd() + "/views/home.html");
+});
+
+app.get("/", function(req, res) {
+  res.sendFile(process.cwd() + "/views/file-upload.html");
+});
+
+app.post("/", function(req, res) {
+  res.sendFile(process.cwd() + "/views/file-upload.html");
 });
 
 /*var form = new formidable.IncomingForm();
