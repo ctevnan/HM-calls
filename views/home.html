@@ -80,15 +80,33 @@
                             <br/>
                             <div align="right">
                               <button id="submitajax" type="submit" class="btn btn-success btn-large" value="Upload">Submit</button>
-                              <img src="../images/ajax-loader(1).gif" id="ajaxspinner">
                             </div>
                           </div>
                         </fieldset>        
                       </form>
-                 </div>
-            </div>
-        </div>
-    <nav class="navbar navbar-inverse"></nav>          
+                      <div class="alert alert-info">
+                        <a class="close" data-dismiss="alert">x</a>
+                        <strong>Welcome</strong>
+                        "
+                              Users can make use of this page to send requests to the API.
+                              Simply specify HTTP method, URL and parameters, and then click on "
+                        <b>Submit</b>
+                        ". 
+                              Note that this page requires a browser with HTML5 support.
+                                    "
+                      </div>
+                    </div>
+                    <div class="span6">
+                      <div id="output">
+                        <pre id="statuspre">0</pre>
+                        <pre class="pre-scrollable prettyprint linenums" id="outputpre"></pre>
+                        <pre class="pre-scrollable prettyprint linenums" id="headerpre"></pre>
+                      </div>
+                    </div>
+                  </div>
+                  <br/>
+                </div>                       
+    <nav class="navbar navbar-inverse fixed-bottom"></nav>          
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
     <script src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
