@@ -86,14 +86,6 @@ app.get("/", function(req, res) {
   res.sendFile(process.cwd() + "/views/home.html");
 });
 
-app.get("/", function(req, res) {
-  res.sendFile(process.cwd() + "/views/file-upload.html");
-});
-
-app.post("/", function(req, res) {
-  res.sendFile(process.cwd() + "/views/file-upload.html");
-});
-
 /*var form = new formidable.IncomingForm();
 //formidable uploads to OS's tmp dir by default
 form.uploadDir = "./img"; //set upload dir
