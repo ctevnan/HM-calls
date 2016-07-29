@@ -52,30 +52,7 @@ http.createServer(function (req, res) {
 
   return;
 }
-  //display file upload form
-  res.writeHead(200, {'content-type': 'text/html'});
-  res.end(
-      '<form action="/upload" enctype="multipart/form-data" method="post">'+
-      '<fieldset>'+
-      '<label for="httpmethod">Method</label>'+
-      '<input type="text" id="method" name="method" placeholder="Enter http method"><br>'+
-        '<label for="url">Endpoint</label>'+
-        '<input type="text" id="urlvalue" name="url" placeholder="Enter url endpoint"><br>'+
-        '<label for="userID">userID</label>'+
-        '<input type="text" id="userIDValue" name="userID" placeholder="Enter UUID"><br>'+
-        '<label for="currentDB">currentDB</label>'+
-        '<input type="text" id="currentDBValue" name="currentDB" placeholder="Enter currentDB"><br>'+
-        '<label for="mode">Mode</label>'+
-        '<input type="text" id="modevalue" name="mode" placeholder="Enter Match to perform a match, enter ToDatabase to upload to database"><br>'+
-        '<label for="fileupload">File upload</label>'+
-        '<input type="file" id="fileinput" name="fileUpload"><br>'+                     
-        '<input type="submit" value="Upload">'+
-      '</fieldset>'+   
-    '</form>' 
-  );
-}).listen(80);    
   
-
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.use(express.static('public'));
@@ -87,85 +64,6 @@ app.use("/js", express.static("public/js"));
 app.get("/", function(req, res) {
   res.sendFile(process.cwd() + "/views/home.html");
 });
-
-/*var form = new formidable.IncomingForm();
-//formidable uploads to OS's tmp dir by default
-form.uploadDir = "./img"; //set upload dir
-form.keepExtensions = true; //keep file extension
-
-  //formidable changes name of uploaded file
-  //rename file
-  fs.rename(files.fileUploaded.path, './img/'+files.fileUploaded.name, function (err) {
-    if (err)
-      throw err;
-    console.log('rename complete');
-  });
-  res.end();
-});
-
-function displayForm(res) {
-  fs.readFile('./views/layouts/form.html', function (err, data) {
-    res.writeHead(200, {
-      'Content-Type': 'text/html',
-        'Content-Length': data.length
-    });
-    res.write(data);
-    res.end();
-  });
-}
-
-function processAllFieldsOfTheForm(req, res) {
-  var form = new formidable.IncomingForm();
-
-  form.parse(req, function (err, fields, files) {
-    //store the data from the fields in data store
-    res.writeHead(200, {
-      'content-type': 'text/plain'
-    });
-    res.write('recieved the data:\n\n');
-    res.end(util.inspect({
-      fields: fields,
-      files: files
-    }));
-  });
-}
-
-function processFormFieldsIndividual(req, res) {
-  //store data from the fields in data store ie file/db
-  var fields = [];
-  var form = new formidable.IncomingForm();
-  form.on('field', function (field, value) {
-    console.log('field');
-    console.log('value');
-    fields[field] = value;
-  });
-  //bc when ea file in form is parsed
-  form.on('file', function (name, file) {
-    console.log(name);
-    console.log(file);
-    fields[name] = file; //storing the files meta in fields array
-  });
-  //db for file upload progress
-  form.on('progress', function (bytesRecieved, bytesExpected) {
-    var progress = {
-      type: 'progress',
-      bytesRecieved: bytesRecieved,
-      bytesExpected: bytesExpected
-    };
-    console.log(progress); //logging progress in console.
-  });
-  //cb at the end of the form
-  form.on('end', function() {
-    res.writeHead(200, {
-      'content-type': 'text/plain'
-    });
-    res.write('recieved the data:\n\n');
-    res.end(util.inspect({
-      fields: fields
-    }));
-  });
-  form.parse(req);
-}*/
 
 function setHeaders (req, res, next) {
   res.header("Access-Control-Allow-Origin", "*");
