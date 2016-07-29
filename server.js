@@ -2,6 +2,8 @@ var express = require("express");
 var app = express();
 var logger = require("morgan");
 var formidable = require("formidable");
+/*var mongoose = require("mongoose");
+var db = require("mysql");*/
 var http = require("http");
 var util = require("util");
 var fs = require("fs-extra"); //file system- needed for renaming file
@@ -31,7 +33,7 @@ http.createServer(function (req, res) {
     console.log(percent_complete.toFixed(2));
   });
   
-  form.on('end', function(fields, files) {
+  form.on('end', function (fields, files) {
     //temp location of our uploaded file
     var temp_path = this.openedFiles[0].path;
     //file name of the uploaded file

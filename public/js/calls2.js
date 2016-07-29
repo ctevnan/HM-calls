@@ -1,4 +1,4 @@
-$(document).ready(function() {
+/*$(document).ready(function() {
   $(".btn btn-default").on("click", function(e) {
     e.preventDefault();
     
@@ -18,7 +18,7 @@ $(document).ready(function() {
       }
     });
   });
-});    
+}); */   
   
   /*$("form#data").submit(function(){
     var formData = $(this).serialize();

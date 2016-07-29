@@ -23,8 +23,10 @@
     "formidable": "^1.0.17",
     "fs-extra": "^0.30.0",
     "http": "0.0.0",
+    "mongoose": "^4.5.7",
     "morgan": "^1.7.0",
     "multipart-poster": "^1.0.0",
+    "mysql": "^2.11.1",
     "path": "^0.12.7",
     "send-data": "^8.0.0",
     "util": "^0.10.3"
