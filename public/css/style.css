@@ -11,4 +11,8 @@
 },
 body {
   font-family: 'Oxygen', sans-serif;
+},
+#navbar {
+  position: fixed;
+  bottom: 0px;
 }

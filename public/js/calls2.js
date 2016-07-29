@@ -6,7 +6,7 @@ $(document).ready(function() {
     var userID = $("userID").val();
     var currentDB = $("currentDB").val();
     var mode = $("mode").val();
-    var halberdApiUrl = "http://matchapi.halberdtechnologies.com/api";
+    var halberdApiUrl = "http://matchapi.halberdtechnologies.com/api/Database?userID=TestFolder&database=VPNVerify888&mode=match";
 
     halberdApiUrl += "&userID" + userID + "&currentDB" + currentDB + "&mode" + mode;
 
