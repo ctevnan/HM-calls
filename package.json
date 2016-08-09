@@ -28,6 +28,7 @@
     "morgan": "^1.7.0",
     "multipart-poster": "^1.0.0",
     "mysql": "^2.11.1",
+    "node-http-server": "^5.1.0",
     "path": "^0.12.7",
     "send-data": "^8.0.0",
     "util": "^0.10.3"

@@ -57,7 +57,7 @@ http.createServer(function (req, res) {
   return;
 }*/
   
-app.use(express.static(path.join(__dirname, 'public')));
+/*app.use(express.static(path.join(__dirname, 'public')));*/
 
 app.use(express.static('public'));
 
