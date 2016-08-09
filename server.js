@@ -1,9 +1,7 @@
 var express = require("express");
 var app = express();
 var logger = require("morgan");
-var formidable = require("formidable");
-/*var mongoose = require("mongoose");
-var db = require("mysql");*/
+/*var formidable = require("formidable");
 var http = require("http");
 var util = require("util");
 var fs = require("fs-extra"); //file system- needed for renaming file
@@ -13,9 +11,15 @@ var jsonBody = require("body/json");
 var formBody = require("body/form");
 var anyBody = require("body/any");
 var sendJson = require("send-data/json");
+var mongojs = require("mongojs");
+var mongoose = require("mongoose");
+var db = mongojs('apicallsdb', ['mycollection']);*/
+var server = require("node-http-server");
 
-var PORT = process.env.PORT || 8080;
+var PORT = process.env.PORT || 3000;
 
+/*mongoose.connect('mongodb://localhost/apicallsdb');*/
+/*
 http.createServer(function (req, res) {
   if (req.url == '/upload' && req.method.toLowerCase() == 'post') {
   //parse a file upload  
@@ -51,7 +55,7 @@ http.createServer(function (req, res) {
   });
 
   return;
-}
+}*/
   
 app.use(express.static(path.join(__dirname, 'public')));
 
@@ -63,6 +67,15 @@ app.use("/js", express.static("public/js"));
 
 app.get("/", function(req, res) {
   res.sendFile(process.cwd() + "/views/home.html");
+});
+
+app.get('/userIDs/:folderName', function(req, res) {
+  matchapi.halberdtechnologies.search(req.params.folderName, function(err, folders) {
+    console.log(folders);
+    var firstFolder = folders[0];
+
+    res.send(JSON.stringify(firstFolder));
+  });
 });
 
 function setHeaders (req, res, next) {
