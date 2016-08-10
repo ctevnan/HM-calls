@@ -13,7 +13,8 @@ body {
   font-family: 'Oxygen', sans-serif;
 },
 table {
-  display: table-row-group;
+  display: table;
+  margin: 0 auto;
   border-collapse: separate;
   border-spacing: 2px;
   border-color: black;

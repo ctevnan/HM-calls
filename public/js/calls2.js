@@ -20,16 +20,16 @@ $(document).ready(function() {
   });
 });   
 
-/*$("form#data").submit(function(){
+$("form#data").submit(function(){
   var formData = $(this).serialize();
 
   $.ajax({
     url: window.location.pathname,
-    type: 'POST',
+    type: 'GET',
     data: formData,
     async: false,
     success: function (data) {
-      alert(data);
+      alert("data");
     },
     cache: false,
     contentType: false,
@@ -37,4 +37,4 @@ $(document).ready(function() {
   });
 
   return false;
-});     */
+});
