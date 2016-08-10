@@ -13,8 +13,12 @@ body {
   font-family: 'Oxygen', sans-serif;
 },
 table {
-  display: table;
+  display: table-row-group;
   border-collapse: separate;
   border-spacing: 2px;
   border-color: black;
+},
+td {
+  display: table-cell;
+  vertical-align: inherit;
 }
