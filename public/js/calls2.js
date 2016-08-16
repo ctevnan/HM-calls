@@ -1,5 +1,11 @@
 $(document).ready(function() {
-
+  
+  function setHeaders (req, res, next) {
+    res.header("Access-Control-Allow-Origin", "*");
+    res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
+    next();
+  };
+   
   $.ajax({
     type:"GET",
     url: "http://matchapi.halberdtechnologies.com/api/Database?userID=TestFolder",
@@ -28,4 +34,7 @@ $(document).ready(function() {
       console.log(jqXHR);
     }
   });
+  function successCallback(responseObject){
+    alert(JSON.stringify(responseObject));
+  }
 });   
