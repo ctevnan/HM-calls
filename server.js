@@ -5,6 +5,8 @@ var server = require("node-http-server");
 
 var PORT = process.env.PORT || 4000;
 
+Access-Control-Allow-Origin: *
+
 app.use(express.static('public'));
 
 app.use(express.static('images'));
