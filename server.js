@@ -3,7 +3,7 @@ var app = express();
 var logger = require("morgan");
 var server = require("node-http-server");
 
-var PORT = process.env.PORT || 3000;
+var PORT = process.env.PORT || 4000;
 
 app.use(express.static('public'));
 
