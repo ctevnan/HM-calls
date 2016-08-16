@@ -5,7 +5,7 @@ $(document).ready(function() {
     res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
     next();
   };
-   
+
   $.ajax({
     type:"GET",
     url: "http://matchapi.halberdtechnologies.com/api/Database?userID=TestFolder",
@@ -14,11 +14,11 @@ $(document).ready(function() {
       console.log(textStatus);
       console.log(jqXHR);
     },
-    error: function(data,textStatus, jqXHR) {
+    error: function(data, textStatus, jqHXR) {
       console.log(data);
       console.log(textStatus);
       console.log(jqXHR);
-    }
+    } 
   });
   $.ajax({
     type: "POST",
