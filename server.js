@@ -5,13 +5,19 @@ var server = require("node-http-server");
 
 var PORT = process.env.PORT || 4000;
 
-Access-Control-Allow-Origin: *
+app.all('/', function(req, res, next) {
+  res.header("Access-Control-Allow-Origin", "*");
+  res.header("Access-Control-Allow-Headers", "X-Requested-With");
+  next();
+});
 
-app.use(express.static('public'));
+app.get('/', function(req, res, next) {
+  //handle the get for this route
+});
 
-app.use(express.static('images'));
-
-app.use("/js", express.static("public/js"));
+app.post('/', function(req, res, next) {
+  //handle post
+});
 
 function setHeaders (req, res, next) {
   res.header("Access-Control-Allow-Origin", "*");
@@ -23,6 +29,12 @@ function setHeaders (req, res, next) {
 app.get("/", function(req, res) {
   res.sendFile(process.cwd() + "/views/home.html");
 });
+
+app.use("/js", express.static("public/js"));
+
+app.use(express.static('public'));
+
+app.use(express.static('images'));
 
 app.get('/userIDs/:folderName', function(req, res) {
   matchapi.halberdtechnologies.search(req.params.folderName, function(err, folders) {
