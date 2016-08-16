@@ -12,9 +12,16 @@ $(document).ready(function() {
 
     $.ajax({
       type:"GET",
-      url: halberdApiUrl,
-      success: function(response) {
-        console.log(response);
+      url: "http://matchapi.halberdtechnologies.com/api/Database?userID=TestFolder",
+      success: function(data, textStatus, jqXHR) {
+        console.log(data);
+        console.log(textStatus);
+        console.log(jqXHR);
+      },
+      error: function(data,textStatus, jqXHR) {
+        console.log(data);
+        console.log(textStatus);
+        console.log(jqXHR);
       }
     });
   });
