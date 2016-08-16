@@ -13,6 +13,7 @@ app.use("/js", express.static("public/js"));
 
 function setHeaders (req, res, next) {
   res.header("Access-Control-Allow-Origin", "*");
+  res.header("GET,POST,OPTIONS,DELETE,PUT");
   res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
   next();
 };
