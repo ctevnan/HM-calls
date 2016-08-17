@@ -1,6 +1,20 @@
 $(document).ready(function () {
+  
+  var invocation = new XMLHttpRequest();
+  var url = 'http://matchapi.halberdtechnologies.com/api/Database?userID=TestFolder';
 
-  $.ajax({
+  function callOtherDomain() {
+    if(invocation) {
+      invocation.open('GET', url, true);
+      invocation.onreadystatechange = handler;
+      invocation.send();
+    }
+  }
+
+  function successCallback(responseObject){
+    alert(JSON.stringify(responseObject));
+  }
+  /*$.ajax({
     type: "GET",
     url: "http://matchapi.halberdtechnologies.com/api/Database?userID=TestFolder",
     success: function(data, textStatus, jqXHR) {
@@ -13,8 +27,8 @@ $(document).ready(function () {
       console.log(textStatus);
       console.log(jqXHR);
     } 
-  });
-  $.ajax({
+  });*/
+  /*$.ajax({
     type: "POST",
     url: "http://matchapi.halberdtechnologies.com/api/Database?userID=TestFolder&database=VPNVerify888",
     success: function(data, textStatus, jqXHR) {
@@ -27,8 +41,5 @@ $(document).ready(function () {
       console.log(textStatus);
       console.log(jqXHR);
     }
-  });
-  function successCallback(responseObject){
-    alert(JSON.stringify(responseObject));
-  }
+  });*/
 });   
