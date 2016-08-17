@@ -1,14 +1,14 @@
-$(document).ready(function() {
+$(document).ready(function () {
 
   $.ajax({
-    type:"GET",
+    type: "GET",
     url: "http://matchapi.halberdtechnologies.com/api/Database?userID=TestFolder",
     success: function(data, textStatus, jqXHR) {
       console.log(data);
       console.log(textStatus);
       console.log(jqXHR);
     },
-    error: function(data, textStatus, jqHXR) {
+    error: function(data, textStatus, jqXHR) {
       console.log(data);
       console.log(textStatus);
       console.log(jqXHR);
@@ -22,7 +22,7 @@ $(document).ready(function() {
       console.log(textStatus);
       console.log(jqXHR);
     },
-    error: function(data, textStatus, jqHXR) {
+    error: function(data, textStatus, jqXHR) {
       console.log(data);
       console.log(textStatus);
       console.log(jqXHR);

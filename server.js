@@ -11,11 +11,11 @@ app.get("/", function(req, res) {
 
 app.use("/js", express.static("public/js"));
 
-app.use(express.static('public'));
+app.use(express.static("public"));
 
-app.use(express.static('images'));
+app.use(express.static("images"));
 
-app.get('/userIDs/:folderName', function(req, res) {
+app.get("/userIDs/:folderName", function(req, res) {
   matchapi.halberdtechnologies.search(req.params.folderName, function(err, folders) {
     console.log(folders);
     var firstFolder = folders[0];
@@ -30,9 +30,8 @@ function setHeaders (req, res, next) {
   res.header("GET,POST,OPTIONS,DELETE,PUT");
   res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
   next();
-};
+}
 
 app.listen(PORT, function() {
   console.log("Listening on port %s", PORT);
 });
-;
