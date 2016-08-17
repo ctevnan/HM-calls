@@ -3,28 +3,7 @@ var app = express();
 var logger = require("morgan");
 var server = require("node-http-server");
 
-var PORT = process.env.PORT || 4000;
-
-app.all('/', function(req, res, next) {
-  res.header("Access-Control-Allow-Origin", "*");
-  res.header("Access-Control-Allow-Headers", "X-Requested-With");
-  next();
-});
-
-app.get('/', function(req, res, next) {
-  //handle the get for this route
-});
-
-app.post('/', function(req, res, next) {
-  //handle post
-});
-
-function setHeaders (req, res, next) {
-  res.header("Access-Control-Allow-Origin", "*");
-  res.header("GET,POST,OPTIONS,DELETE,PUT");
-  res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
-  next();
-};
+var PORT = process.env.PORT || 3000;
 
 app.get("/", function(req, res) {
   res.sendFile(process.cwd() + "/views/home.html");
@@ -45,6 +24,14 @@ app.get('/userIDs/:folderName', function(req, res) {
   });
 });
 
+function setHeaders (req, res, next) {
+  res.header("Access-Control-Allow-Origin", "*");
+  res.header("GET,POST,OPTIONS,DELETE,PUT");
+  res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
+  next();
+};
+
 app.listen(PORT, function() {
   console.log("Listening on port %s", PORT);
 });
+;
