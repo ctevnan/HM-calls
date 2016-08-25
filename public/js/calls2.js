@@ -1,20 +1,28 @@
 $(document).ready(function () {
-  $.ajax({
-    type: "GET",
+
+  $.getJSON("http://matchapi.halberdtechnologies.com/api/Database?userID=TestFolder&callback=?", function(result){
+    //response data are now in the result variable
+    alert(result);
+  });
+}); 
+/*  $.ajax({
+    type: "Get",
     url: "http://matchapi.halberdtechnologies.com/api/Database?userID=TestFolder",
-    crossDomain: true,
     dataType: "jsonp",
-    jsonpCallback: "callback",
+    jsonp: false,
+    jasonpCallback: "myJsonMethod",
     success: function(data) {
-      console.log(data);
+      alert(data);
     },
-    error: function(data, textStatus, jqXHR) {
-      console.log(data);
-      console.log(textStatus);
-      console.log(jqXHR);
+    error: function(httpReq, status, exception) {
+      alert(status+" "+exception);
     } 
   });
-});    
+}); 
+
+function getData(data) {
+  console.log(data);
+}*/
 /*  var invocation = new XMLHttpRequest();
   var url = 'http://matchapi.halberdtechnologies.com/api/Database?userID=TestFolder';
 
