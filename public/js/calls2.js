@@ -4,14 +4,16 @@ $(document).ready(function () {
   });
 });  
 
-/*  $.ajax({
+  $.ajax({
     type: "Get",
     url: "http://matchapi.halberdtechnologies.com/api/Database?userID=TestFolder",
     dataType: "jsonp",
-    jsonp: false,
-    jasonpCallback: "myJsonMethod",
-    success: function(data) {
-      alert(data);
+    jsonp: "callback",
+    data: {
+      format: "json"
+    },
+    success: function(response) {
+      console.log(response);
     },
     error: function(httpReq, status, exception) {
       alert(status+" "+exception);
