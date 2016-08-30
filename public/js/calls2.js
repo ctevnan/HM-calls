@@ -1,8 +1,7 @@
 $(document).ready(function () {
   $.getJSON("http://matchapi.halberdtechnologies.com/api/Database?userID=TestFolder&callback=?", function(json){
     console.log(json);
-  });
-});  
+  });  
 
   $.ajax({
     type: "Get",
@@ -21,9 +20,6 @@ $(document).ready(function () {
   });
 }); 
 
-function getData(data) {
-  console.log(data);
-}*/
 /*  var invocation = new XMLHttpRequest();
   var url = 'http://matchapi.halberdtechnologies.com/api/Database?userID=TestFolder';
 
