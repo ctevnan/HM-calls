@@ -98,13 +98,16 @@
                   </div>
                   <br/>
                 </div>
-                <br/>
-                <input type="button" id="clickme" value="Show Results">
-                <div id="results"></div> 
                <!--  <nav class="navbar navbar-inverse navbar-fixed-bottom"></nav>    -->     
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
     <script src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
     <script type="text/javascript" src="js/calls2.js"></script>
+    <script type="text/javascript">
+  function ws_results(obj) {
+    alert(obj.ResultSet.totalResultsAvailable);
+  }
+  </script>
+  <script src="http://matchapi.halberdtechnologies.com/api/Database?userID=testFolder&output=json"</script>
   </body>
 </html>

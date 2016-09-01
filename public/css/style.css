@@ -9,15 +9,6 @@
   font-size: 15px;
   color: #e6ffff;
 },
-.header {
-  font-family: Arial;
-  background-color: DarkBlue;
-  color: white;
-  margin-top: 2em;
-  padding: .25em;
-  border-top: 1pt solid SteelBlue;
-  border-bottom: 1pt solid SteelBlue;
-},
 body {
   font-family: 'Oxygen', sans-serif;
 },
