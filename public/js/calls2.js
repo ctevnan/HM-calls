@@ -8,7 +8,7 @@ $(document).ready(function () {
     console.log(data);
   }
  });
- 
+
  $.getJSON("https://cors-anywhere.herokuapp.com/http://matchapi.halberdtechnologies.com/api/Database?userID=TestFolder", function(json){
     console.log(json);
   });
@@ -20,6 +20,21 @@ $(document).ready(function () {
     console.log(data);
     console.log(textStatus);
     console.log(jqXHR);
+  },
+  error: function(data, textStatus, jqXHR) {
+    console.log(data);
+    console.log(textStatus);
+    console.log(jqXHR);
+  }
+ });
+
+ $.ajax({
+  type: "POST",
+  url: "https://cors-anywhere.herokuapp.com/http://matchapi.halberdtechnologies.com/api/Database?userID=TestFolder&database=VPNVerify888",
+  success: function(data, textStatus, jqXHR) {
+    console.log(data);
+    console.log(textStatus);
+    console.log(jqXHR);  
   },
   error: function(data, textStatus, jqXHR) {
     console.log(data);
