@@ -20,94 +20,20 @@
       <div class="container">
         <div class="row show-grid">
           <div id="leftcolumn" class="span6">    
-            <form id='form' class="well" target="output" enctype="multipart/form-data" method="get" action="http://matchapi.halberdtechnologies.com/api/Database?userID=TestFolder"> <!--the action attribute defines where the form data is sent -->
-            <fieldset>
-              <legend>HTTP Request Options</legend>
-              <br/>
-              <div class="row show-grid">
-                <div class="span1">
-                  <div class="control-group">
-                    <label class="control-label" for="httpmethod">Method</label>
-                      <div class="controls">
-                        <select class="input-small" id="httpmethod">
-                          <option>POST</option>
-                          <option>GET</option>
-                        </select>  
-                      </div>
-                    </div>
-                  </div>
-                  <div class="span4">
-                    <div class="control-group">
-                      <label class="control-label" for="urlvalue">Endpoint</label>
-                        <div class="controls">
-                          <input type="text" class="input-xlarge" id="urlvalue" value="http://matchapi.halberdtechnologies.com/api/Database?userID=TestFolder">
-                        </div>
-                    </div>
-                  </div>
-                </div>
-                <p class="help-block">
-                  "User must enter Method and Endpoint."  
-                </p>
-                <div align="left">    
-                  <div class="span 4"></div>
-                     <div class="control-group">
-                       <label class="control-label" for="uuid">UUID</label>
-                       <div class="controls">
-                         <input type="text" class="input-xlarge" id="uuidvalue" value="uuid">
-                       </div>
-                     </div>
-                     <div class="span 4"></div>
-                       <div class="control-group">
-                         <label class="control-label" for="database">Database</label>
-                          <div class="controls">
-                            <input type="text" class="input-xlarge" id="databasevalue" value="database">
-                          </div>
-                        </div>
-                        <div class="span2"></div>
-                          <div class="control-group">
-                            <label class="control-label" for="mode">Mode</label>
-                            <div class="controls">
-                              <select class="input-small" id="modevalue">
-                                <option>Match</option>
-                                <option>ToDatabase</option>
-                              </select>
-                            </div>
-                          </div>
-                          <br/>
-                          <div class="span4"></div>
-                            <div class="controls">
-                              <input type="file" name="thumbnail">
-                            </div>         
-                            <br/>
-                            <div align="right">
-                              <button id="submit" type="button" class="btn btn-success btn-large" value="Upload">Submit</button>
-                            </div>
-                          </div>
-                        </fieldset>        
-                      </form>
-                      <div class="alert alert-info">
-                        <a class="close" data-dismiss="alert">x</a>
-                        <strong>Welcome</strong>
-                        "
-                              This page can be used to send requests to the API.
-                              Specify HTTP method, URL, and parameters, and then click on "
-                        <b>Submit</b>
+            <div class="alert alert-info">
+              <a class="close" data-dismiss="alert">x</a>
+                <strong>Welcome</strong>
+                  " This page is "
+                        <b>under construction</b>
                         ".
-                      </div>
-                    </div>
-                  </div>
-                  <br/>
-                </div>
-               <!--  <nav class="navbar navbar-inverse navbar-fixed-bottom"></nav>    -->     
+            </div>
+          </div>
+        </div>
+      </div>
+      <nav class="navbar navbar-inverse navbar-fixed-bottom"></nav>   
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
     <script src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
     <script type="text/javascript" src="js/calls2.js"></script>
-    <script type="text/javascript">
-  function ws_results(obj) {
-    alert(obj.ResultSet.totalResultsAvailable);
-  }
-  </script>
-  <script src="http://matchapi.halberdtechnologies.com/api/Database?userID=testFolder&output=json"</script>
   </body>
 </html>
