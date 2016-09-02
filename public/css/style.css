@@ -12,7 +12,7 @@
 body {
   font-family: 'Oxygen', sans-serif;
 },
-table {
+.datatable {
   margin: 0 auto;
   border-collapse: separate;
   border-spacing: 2px;
