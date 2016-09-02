@@ -1,17 +1,4 @@
 $(document).ready(function () {
- 
- var url = 'https://cors-anywhere.herokuapp.com/http://matchapi.halberdtechnologies.com/api/Database?userID=testFolder';
-
- $.ajax({
-  url: url,
-  complete: function(data){
-    console.log(data);
-  }
- });
-
- $.getJSON("https://cors-anywhere.herokuapp.com/http://matchapi.halberdtechnologies.com/api/Database?userID=TestFolder", function(json){
-    console.log(json);
-  });
 
  $.ajax({
   type: "GET",
