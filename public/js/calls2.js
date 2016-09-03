@@ -13,6 +13,19 @@ $(document).ready(function () {
     alert("Error thrown");
   }
 
+  function buildListGroup(userIDData) {
+      var apiUrl = "";
+      apiUrl += userIDData.owner.login + "/";
+      apiUrl += userIDData.name + "/userID";
+
+      var newLink = $("<a>")
+        .attr("href", apiUrl)
+        .addClass("list-group-item")
+        .append(userIDData.full_name);
+      return newLink;
+    }
+  }   
+
 
 
  /*$.ajax({
