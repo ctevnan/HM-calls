@@ -2,18 +2,18 @@ $(document).ready(function () {
 
  $.ajax({
   type: "GET",
-  url: "https://cors-anywhere.herokuapp.com/http://matchapi.halberdtechnologies.com/api/Database?userID=testFolder&output=json",
-  success: function(data, textStatus, jqXHR) {
-    console.log(data);
-    console.log(textStatus);
-    console.log(jqXHR);
+  url: "https://cors-anywhere.herokuapp.com/http://matchapi.halberdtechnologies.com/api/Database?userID=testFolder",
+  success: function(userID) {
+    for (var i = 0; i < userID.length; i++) {
+      var newlistItem = buildlistGroup(userID[i]);
+      $(".list-group").append(newlistItem);
+    }
   },
-  error: function(data, textStatus, jqXHR) {
-    console.log(data);
-    console.log(textStatus);
-    console.log(jqXHR);
-  }
- });
+  error: function(jqXHR, textStatus, errorThrown) {
+    alert("Error thrown");
+  });
+
+    
 
  $.ajax({
   type: "POST",
