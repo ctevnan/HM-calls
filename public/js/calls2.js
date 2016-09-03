@@ -11,11 +11,11 @@ $(document).ready(function () {
   },
   error: function(jqXHR, textStatus, errorThrown) {
     alert("Error thrown");
-  });
+  }
 
-    
 
- $.ajax({
+
+ /*$.ajax({
   type: "POST",
   url: "https://cors-anywhere.herokuapp.com/http://matchapi.halberdtechnologies.com/api/Database?userID=TestFolder&database=VPNVerify888",
   success: function(data, textStatus, jqXHR) {
@@ -28,5 +28,6 @@ $(document).ready(function () {
     console.log(textStatus);
     console.log(jqXHR);
   }
- });
+ });*/
+}); 
 }); 
