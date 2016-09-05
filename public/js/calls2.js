@@ -13,8 +13,8 @@ $(document).ready(function () {
     alert("Error thrown");
   }
 
-  function buildListGroup(userIDData) {
-      var apiUrl = "";
+  function buildListGroup(userID) {
+      var apiUrl = "https://cors-anywhere.herokuapp.com/http://matchapi.halberdtechnologies.com/api/Database?userID=testFolder";
       apiUrl += userIDData.owner.login + "/";
       apiUrl += userIDData.name + "/userID";
 
