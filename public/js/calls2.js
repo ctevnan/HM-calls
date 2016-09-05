@@ -24,9 +24,7 @@ $(document).ready(function () {
       .append(currentDatabaseTd)
   }
 });      
-  }    
-
-
+    
  $.ajax({
   type: "GET",
   url: "https://cors-anywhere.herokuapp.com/http://matchapi.halberdtechnologies.com/api/Database?userID=testFolder",
@@ -40,7 +38,7 @@ $(document).ready(function () {
     alert("Error thrown");
   }
 
-  function buildListGroup(database) {
+  function buildListGroup(data) {
       var apiUrl = "https://cors-anywhere.herokuapp.com/http://matchapi.halberdtechnologies.com/api/Database?userID=testFolder";
       apiUrl += database.owner.login + "/";
       apiUrl += database.name + "/userID";
