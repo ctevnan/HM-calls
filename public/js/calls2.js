@@ -21,7 +21,7 @@ $(document).ready(function () {
       var newLink = $("<a>")
         .attr("href", apiUrl)
         .addClass("list-group-item")
-        .append(userIDData.full_name);
+        .append(userID.full_name);
       return newLink;
     }
   }   
