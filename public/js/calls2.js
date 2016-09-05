@@ -1,4 +1,31 @@
 $(document).ready(function () {
+  $(".list-group").on("click", "a", function(e) {
+    e.preventDefault();
+  
+    $.ajax({
+      type: "GET",
+      url: $(this).attr("href"),
+      success: function(database) {
+        $("tbody").empty();
+        for (var i = 0; i < database.length; i++){
+          $("tbody").append(buildTableRow(database[i]));
+        }
+      }
+    })
+  });
+
+  function buildTableRow(database) {
+    var nameTd = $("<td>").append(database.name);
+    var userIDTd = $("<td>").append(userID);
+    var currentDatabaseTd = $("<td>").append(currentDatabase);
+
+    return $("<tr>").append(nameTd)
+      .append(userIDTd)
+      .append(currentDatabaseTd)
+  }
+});      
+  }    
+
 
  $.ajax({
   type: "GET",
@@ -6,7 +33,7 @@ $(document).ready(function () {
   success: function(userID) {
     for (var i = 0; i < userID.length; i++) {
       var newlistItem = buildlistGroup(userID[i]);
-      $(".list-group").append(newlistItem);
+      $("list-group").append(newlistItem);
     }
   },
   error: function(jqXHR, textStatus, errorThrown) {
@@ -27,7 +54,7 @@ $(document).ready(function () {
   }   
 
 
-
+/**/
  /*$.ajax({
   type: "POST",
   url: "https://cors-anywhere.herokuapp.com/http://matchapi.halberdtechnologies.com/api/Database?userID=TestFolder&database=VPNVerify888",
