@@ -13,15 +13,15 @@ $(document).ready(function () {
     alert("Error thrown");
   }
 
-  function buildListGroup(userID) {
+  function buildListGroup(database) {
       var apiUrl = "https://cors-anywhere.herokuapp.com/http://matchapi.halberdtechnologies.com/api/Database?userID=testFolder";
-      apiUrl += userIDData.owner.login + "/";
-      apiUrl += userIDData.name + "/userID";
+      apiUrl += database.owner.login + "/";
+      apiUrl += database.name + "/userID";
 
       var newLink = $("<a>")
         .attr("href", apiUrl)
         .addClass("list-group-item")
-        .append(userID.full_name);
+        .append(database.full_name);
       return newLink;
     }
   }   
