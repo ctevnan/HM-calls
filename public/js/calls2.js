@@ -1,5 +1,16 @@
 $(document).ready(function () {
-  $(".list-group").on("click", "a", function(e) {
+
+  var json = [{"name":"6712c44f-9d04-498b-ac68-c1538ad72408_-10_-1_.bmp","userID":"TestFolder","currentDatabase":"VPNVerify888"}]};
+  var tr;
+  for (var i = 0; i < json.length; i++) {
+    tr = $('<tr/>');
+    tr.append("<td>") + json[i].name + "</td>");
+    tr.append("<td>") + json[i].userID + "</td>");
+    tr.append("<td>") + json[i].currentDatabase + "</td>");
+    $('table').append(tr);
+  }
+});  
+  /*$(".list-group").on("click", "a", function(e) {
     e.preventDefault();
   
     $.ajax({
@@ -51,7 +62,7 @@ $(document).ready(function () {
     }
   }   
 
-
+*/
 /**/
  /*$.ajax({
   type: "POST",
