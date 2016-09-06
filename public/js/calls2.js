@@ -1,21 +1,24 @@
 $(document).ready(function () {
-
-  var json = [{"name":"6712c44f-9d04-498b-ac68-c1538ad72408_-10_-1_.bmp","userID":"TestFolder","currentDatabase":"VPNVerify888"}]};
-  var tr;
-  for (var i = 0; i < json.length; i++) {
+  
+  $.getJSON("https://cors-anywhere.herokuapp.com/http://matchapi.halberdtechnologies.com/api/Database?userID=testFolder",
+    function(json) {
+    var tr;
+    for (var i = 0; i < json.length; i++) {
     tr = $('<tr/>');
-    tr.append("<td>") + json[i].name + "</td>");
-    tr.append("<td>") + json[i].userID + "</td>");
-    tr.append("<td>") + json[i].currentDatabase + "</td>");
+    tr.append("<td>" + json[i].name + "</td>");
+    tr.append("<td>" + json[i].userID + "</td>");
+    tr.append("<td>" + json[i].currentDatabase + "</td>");
     $('table').append(tr);
   }
+});
 });  
-  /*$(".list-group").on("click", "a", function(e) {
+
+  $(".list-group").on("click", "a", function(e) {
     e.preventDefault();
   
     $.ajax({
       type: "GET",
-      url: $(this).attr("href"),
+      url: "https://cors-anywhere.herokuapp.com/http://matchapi.halberdtechnologies.com/api/Database?userID=testFolder",
       success: function(database) {
         $("tbody").empty();
         for (var i = 0; i < database.length; i++){
@@ -33,10 +36,9 @@ $(document).ready(function () {
     return $("<tr>").append(nameTd)
       .append(userIDTd)
       .append(currentDatabaseTd)
-  }
-});      
+  }      
     
- $.ajax({
+ /*$.ajax({
   type: "GET",
   url: "https://cors-anywhere.herokuapp.com/http://matchapi.halberdtechnologies.com/api/Database?userID=testFolder",
   success: function(userID) {
@@ -60,11 +62,9 @@ $(document).ready(function () {
         .append(database.full_name);
       return newLink;
     }
-  }   
+  }   */
 
-*/
-/**/
- /*$.ajax({
+ $.ajax({
   type: "POST",
   url: "https://cors-anywhere.herokuapp.com/http://matchapi.halberdtechnologies.com/api/Database?userID=TestFolder&database=VPNVerify888",
   success: function(data, textStatus, jqXHR) {
@@ -77,6 +77,4 @@ $(document).ready(function () {
     console.log(textStatus);
     console.log(jqXHR);
   }
- });*/
-}); 
-}); 
+ });
