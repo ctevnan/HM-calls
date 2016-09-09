@@ -3,10 +3,17 @@ $(document).ready(function () {
   $.ajax({
     type: "GET",
     url: "https://cors-anywhere.herokuapp.com/http://matchapi.halberdtechnologies.com/api/Database?userID=testFolder",
-    success: function(data, textStatus, jqXHR){
-      console.log(data);
-      console.log(textStatus);
-      console.log(jqXHR);
+    success: function(data){
+      var trHTML = '';
+
+      $.each(data.images, function (i, item) {
+        trHTML += '<tr><td>' + item + '</td><td>' + data.userID[i] + '</td></tr>';
+      });
+
+      $('#images').append(trHTML);
+    },
+    error: function(msg){
+      alert(msg.responseText);
     }
   });
   
