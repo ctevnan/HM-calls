@@ -10,6 +10,11 @@
       <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
       <link rel="shortcut icon" href="">
       <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/v/bs-3.3.6/jq-2.2.3/dt-1.10.12/datatables.min.css"/>
+  <style>
+  table, th, td {
+    border: 1px solid black;
+  }
+  </style>    
   </head>
   <body>
     <nav class="navbar navbar-inverse"></nav>
@@ -21,7 +26,7 @@
       <div class="container">
         <div class="row">
           <div class="col-md-6">
-            <table id="empTable" class="display" width="100%" cellspacing="0">
+            <table id="empTable" class="display" width="100%" cellspacing="3">
               <thead>
                 <tr>
                   <th>name</th>
@@ -152,6 +157,11 @@
           </div>  
         </div>
       </div>
+      <br/>
+      <br/>
+      <br/>
+      <br/>
+      <br/>
       <script type="text/javascript">
       $(document).ready(function() {
         $('#empTable').dataTable({

@@ -12,9 +12,6 @@
 body {
   font-family: 'Oxygen', sans-serif;
 },
-.images {
-  margin: 0 auto;
-  border-collapse: separate;
-  border-spacing: 2px;
-  border-color: black;
+.empTable {
+  border: 1px solid black;
 }
