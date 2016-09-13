@@ -26,7 +26,7 @@ $(document).ready(function () {
   type: "GET",
   url: "https://cors-anywhere.herokuapp.com/http://matchapi.halberdtechnologies.com/api/Database?userID=testFolder",
     success: function(data) {
-      $("tbody").empty();
+      /*$("tbody").empty();*/
         for (var i = 0; i < data.length; i++){
           $("tbody").append(buildTableRow(data[i]));
         }
