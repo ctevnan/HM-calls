@@ -1,22 +1,26 @@
 $(document).ready(function () {
+  var json = [{"name":"6712c44f-9d04-498b-ac68-c1538ad72408_-10_-1_.bmp", "userID":"testFolder", "currentDatabase":"VPNVerify888"}, "name":"6712c44f-9d04-498b-ac68-c1538ad72408_.bmp", "userID":"testFolder", "currentDatabase": "VPNVerify888", "name":"6712c44f-9d04-498b-ac68-c1538ad72408_.bmp", "userID": "testFolder", "currentDatabase": "VPNVerify888"}];
+    var tr;
+    for (var i = 0; i < json.length; i++) {
+      tr = $('<tr/>');
+      tr.append('<td>' + json[i].name + '</td>');
+      tr.append('<td>' + json[i].userID + '</td>');
+      tr.append('<td>' + json[i].currentDatabase + '</td>');
+      $('table').append(tr);
+    }
+});
 
-  $("#button").click(function(){
-    $.ajax({
-    type: "GET",
+
+  $.ajax({
+    type:"GET",
     url: "https://cors-anywhere.herokuapp.com/http://matchapi.halberdtechnologies.com/api/Database?userID=testFolder",
-    success: function(response) {
-      var tr;
-      for (var i = 0; i < response.length; i++) {
-        tr = $('<tr/>');
-        tr.append('<td>' + response[i].name + '</td>');
-        tr.append('<td>' + response[i].userID + '</td>');
-        tr.append('<td>' + response[i].currentDatabase + '</td>');
-        $('table').append(tr);
-      }
+    success: function(data, textStatus, jqXHR) {
+      console.log(data);
+      console.log(textStatus);
+      console.log(jqXHR);
     }
   });
-});
-});  
+});    
   /*$.ajax({
     type: "GET",
     url: "https://cors-anywhere.herokuapp.com/http://matchapi.halberdtechnologies.com/api/Database?userID=testFolder",
