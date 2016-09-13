@@ -30,8 +30,8 @@ $(document).ready(function () {
         for (var i = 0; i < data.length; i++){
           $("tbody").append(buildTableRow(data[i]));
         }
-      }
-    });
+      }  
+    });    
 
   function buildTableRow(data) {
     var nameTd = $("<td>").append(database.name);
