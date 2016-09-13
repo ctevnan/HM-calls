@@ -1,16 +1,24 @@
 $(document).ready(function () {
 
+  $("#button").click(function(){
+    $.ajax({
+    type: "GET",
+    url: "https://cors-anywhere.herokuapp.com/http://matchapi.halberdtechnologies.com/api/Database?userID=testFolder",
+    success: function(data) {
+      $.each(item.items, function(index, item){
+        alert(item.name+" "+item.userID)
+      });
+    }
+  }
+
   $.ajax({
     type: "GET",
     url: "https://cors-anywhere.herokuapp.com/http://matchapi.halberdtechnologies.com/api/Database?userID=testFolder",
-    success: function(data){
-      var trHTML = '';
-
-      $.each(data.images, function (i, item) {
-        trHTML += '<tr><td>' + item + '</td><td>' + data.userID[i] + '</td></tr>';
+    success: function(response){
+      $.each([response], function(i, objects){
+        var list = "<li>" + objects + "</li>";
+      $('#result').append(list);  
       });
-
-      $('#images').append(trHTML);
     },
     error: function(msg){
       alert(msg.responseText);
