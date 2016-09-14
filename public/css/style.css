@@ -12,6 +12,7 @@
 body {
   font-family: 'Oxygen', sans-serif;
 },
-.empTable {
-  border: 1px solid black;
+.invList {
+  border-collapse: separate;
+  border-spacing: 5px;
 }
