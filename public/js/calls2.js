@@ -4,7 +4,7 @@ $(document).ready(function () {
 
   function getData(){
     $.ajax({
-      url:"https://cors-anywhere.herokuapp.com/matchapi.halberdtechnologies.com/api/Database?userID=testFolder",
+      url: "https://cors-anywhere.herokuapp.com/http://matchapi.halberdtechnologies.com/api/Database?userID=testFolder",
       method: "GET",
       data: {
         array: a1
