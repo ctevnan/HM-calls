@@ -21,14 +21,5 @@ $(document).ready(function () {
         });
       }
     });
-  }
-  $.ajax({
-    type:"GET",
-    url: "https://cors-anywhere.herokuapp.com/http://matchapi.halberdtechnologies.com/api/Database?userID=testFolder",
-    success: function(data, textStatus, jqXHR) {
-      console.log(data);
-      console.log(textStatus);
-      console.log(jqXHR);
-    }
-  });    
+  }   
 });  
