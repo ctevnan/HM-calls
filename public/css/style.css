@@ -12,7 +12,6 @@
 body {
   font-family: 'Oxygen', sans-serif;
 },
-.invList {
-  border-collapse: separate;
-  border-spacing: 5px;
+table, th, td {
+  border-spacing: 4px solid black;
 }
