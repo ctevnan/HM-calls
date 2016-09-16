@@ -25,7 +25,7 @@ $(document).ready(function () {
   }
   function postData(){
     $.ajax({
-      url:"https://cors-anywhere.herokuapp.com/http://matchapi.halberdtechnologies.com/api/Database?userID=testFolderTwo&database=VPNVerify888",
+      url:"https://cors-anywhere.herokuapp.com/http://matchapi.halberdtechnologies.com/api/Database?userID=0C6D73B6-C90A-4BFC-A52E-1E16A66E5455&database=testFolder",
       method:"POST",
       success: function(data, textStatus, jqXHR){
         console.log(data);

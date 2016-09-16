@@ -2,8 +2,15 @@ var express = require("express");
 var app = express();
 var logger = require("morgan");
 var server = require("node-http-server");
+var formidable = require("formidable");
+var http = require("http");
+var util = require("util");
 
 var PORT = process.env.PORT || 3000;
+/*
+http.createServer(function(req, res{
+  if (req.url == '/upload' && )
+}))*/
 
 app.use(function (req, res, next) {
   res.header("Access-Control-Allow-Origin", "*");
