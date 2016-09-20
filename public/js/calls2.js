@@ -38,5 +38,22 @@ $(document).ready(function () {
         console.log(jqXHR);
       } 
     });
+  }
+
+  function postData(){
+    $.ajax({
+      url: "https://cors-anywhere.herokuapp.com/http://matchapi.halberdtechnologies.com/api/FileUpload?userID=A1180F70-72C8-4FF0-B367-FAE25D2D54DB&currentDB=testFolder&mode=todatabase",
+      method:"POST",
+      success: function(data, textStatus, jqXHR){
+        console.log(data);
+        console.log(textStatus);
+        console.log(jqXHR);
+      },
+      error: function(data, textStatus, jqXHR){
+        console.log(data);
+        console.log(textStatus);
+        console.log(jqXHR);  
+      }
+    });
   }    
 });  
