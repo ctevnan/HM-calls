@@ -23,6 +23,20 @@ $(document).ready(function () {
       }
     });
   }
+
+  function getData(){
+    $.ajax({
+      url: "https://cors-anywhere.herokuapp.com/http://matchapi.halberdtechnologies.com/api/Database?userID=testFolder",
+      method: "GET",
+      error: function(xhr, status, error){
+        console.log(status, error);
+      },
+      success: function(json){
+        console.log(json);
+      }
+    });
+  }
+
   function postData(){
     $.ajax({
       url:"https://cors-anywhere.herokuapp.com/http://matchapi.halberdtechnologies.com/api/Database?userID=0C6D73B6-C90A-4BFC-A52E-1E16A66E5455&database=testFolder",
@@ -42,7 +56,7 @@ $(document).ready(function () {
 
   function postData(){
     $.ajax({
-      url: "https://cors-anywhere.herokuapp.com/http://matchapi.halberdtechnologies.com/api/FileUpload?userID=A1180F70-72C8-4FF0-B367-FAE25D2D54DB&currentDB=testFolder&mode=todatabase",
+      url: "https://cors-anywhere.herokuapp.com/http://matchapi.halberdtechnologies.com/api/FileUpload?userID=0C6D73B6-C90A-4BFC-A52E-1E16A66E5455&currentDB=testFolder&mode=todatabase",
       method:"POST",
       success: function(data, textStatus, jqXHR){
         console.log(data);
@@ -55,5 +69,5 @@ $(document).ready(function () {
         console.log(jqXHR);  
       }
     });
-  }    
+  }
 });  
