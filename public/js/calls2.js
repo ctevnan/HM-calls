@@ -22,11 +22,11 @@ $(document).ready(function () {
         });
       }
     });
-  }
+  };
 
   function getData(){
     $.ajax({
-      url: "https://cors-anywhere.herokuapp.com/http://matchapi.halberdtechnologies.com/api/Database?userID=database",
+      url: "https://cors-anywhere.herokuapp.com/http://matchapi.halberdtechnologies.com/api/Database?userID=100bc1e0-1be0-100e-b101-0101100e1010",
       method: "GET",
       error: function(xhr, status, error){
         console.log(status, error);
@@ -35,11 +35,11 @@ $(document).ready(function () {
         console.log(json);
       }
     });
-  }
+  };
 
- /* function postData(){
+  function postData(){
     $.ajax({
-      url:"https://cors-anywhere.herokuapp.com/http://matchapi.halberdtechnologies.com/api/Database?userID=0C6D73B6-C90A-4BFC-A52E-1E16A66E5455",
+      url:"https://cors-anywhere.herokuapp.com/http://matchapi.halberdtechnologies.com/api/Database?userID=100bc1e0-1be0-100e-b101-0101100e1010&database=newtestDatabase",
       method:"POST",
       success: function(data, textStatus, jqXHR){
         console.log(data);
@@ -52,9 +52,9 @@ $(document).ready(function () {
         console.log(jqXHR);
       } 
     });
-  }
+  };    
 
-  function postData(){
+  /*function postData(){
     $.ajax({
       url: "https://cors-anywhere.herokuapp.com/http://matchapi.halberdtechnologies.com/api/FileUpload?userID=0C6D73B6-C90A-4BFC-A52E-1E16A66E5455&currentDB=testFolder&mode=todatabase",
       method:"POST",
@@ -69,5 +69,5 @@ $(document).ready(function () {
         console.log(jqXHR);  
       }
     });
-  }*/
-});  
+  };*/
+});      
